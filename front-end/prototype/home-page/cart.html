@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="assets/icon/pngwing.com.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+   
+    <div class="wrapper">
+        <header class="header-container" id="header">
+            <div class="nav-nation hide-on-low-device container-fluid d-flex justify-content-between align-items-center">
+                <div class="nav-nation-socials">
+                    <ul class="nav-nation-socials-list d-flex align-items-center m-0 p-0">
+                        <li class="nav-nation-socaials-items">
+                            <i class="fa-brands fa-facebook-f icon-socials"></i>
+                        </li>
+                        <li class="nav-nation-socaials-items">
+                            <i class="fa-brands fa-instagram icon-socials"></i>
+                        </li>
+                        <li class="nav-nation-socaials-items">
+                            <i class="fa-brands fa-pinterest-p icon-socials"></i>
+                        </li>
+                        <li class="nav-nation-socaials-items">
+                            <i class="fa-brands fa-snapchat icon-socials"></i>
+                        </li>
+                        <li class="nav-nation-socaials-items">
+                            <i class="fa-brands fa-youtube icon-socials"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-nation-content">
+                    <p class="m-0 nav-nation-content-text">Free shipping for standard order over $100</p>
+                </div>
+                <div class="nav-nation-list d-flex align-items-center">
+                    <p class="mx-2 my-0 nav-nation-email">fashe@example.com</p>
+                    <div class="nav-nation-select-container">
+                        <select name="" id="" class="nav-nation-select">
+                            <option class="nav-nation-option" value="">USA</option>
+                            <option class="nav-nation-option" value="">UK</option>
+                            <option class="nav-nation-option" value="">VN</option>
+                            <option class="nav-nation-option" value="">RUS</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="nav-main" class="nav-main container-fluid d-flex justify-content-between align-items-center">
+                <div class="nav-logo col-sm-2">
+                    <a href="/home-page.html">
+                        <img src="data:image/webp;base64,UklGRtgBAABXRUJQVlA4TMwBAAAvd4AGEM9AkG1ThTndX+sKAoEkhf259hEIpDiFSTbINtL5u53CIXwRPpHq4eyDAwAMMBQgS7atto72lQi6EqGd7fkPFbig585fEf2fAL57kn7kV/uNZOX+n8upTtqgxZbUS7upzlyHiEg8J06V9tAbolqhHGL2ZZScmEMyeCdDVwznJkZdljBnmU49ldliMO+lV73YXX0E/NRWmktmPWvEd6qTWVcfIU2Jb9zUuUpyE2U+rok6TgB+SgpUmd3qsgNIsrIssWqTRLQNI4UyUIBLtwPboToKQBiECjo4HoFEXwcH1EHQQlttF6CDHdh6nlZ77jHUiT0Cvtd1emHaAIoly9oHyE6mA5BNIuKyJTRY0qJyW9lk3gOk3SZbNsSfhJdVcOpuEX9DXlTh6+3p6enDkrBW6bsCyZYLbdbYk7qOrbdluoX+51P39ceaPDiB0xbE6wVwDsoNsSdyqKrucvZeek8fa8rAVdJmqjJfb8ijsTZfT8PXNWw9e6Nzjhs4pkSBz9Hzorhqn7tuwU+JwtfodVHZLN5wybRyD2HGFeBl8LGIvI/OaEB3m0vcxeVMB+1X75VVoKE5MiYoqr2gmfYmSOo7URl+vT89PX0A" 
+                    alt="">
+                    </a>
+                </div>
+                <div class="nav-list-container hide-on-low-device col-sm-8 text-center">
+                    <ul class="nav-list d-flex list-unstyled m-0 justify-content-center">
+                        <li class="nav-list-item">
+                            <a href="/home-page.html" class="nav-list-item-link">Home</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">Shop</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">Sale</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">Features</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">Blog</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">About</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="" class="nav-list-item-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-information col-sm-2 d-flex justify-content-end">
+                    <button class="circle circle-size-m my-btn mx-1" id="login" onclick="onpenFormLogin()">
+                        <i class="fa-solid fa-user icon-user"></i>
+                    </button>
+                    <button class="circle circle-size-m my-btn mx-1">
+                        <i class="fa-solid fa-bag-shopping icon-bag"></i>
+                    </button>
+                    <button class="show-on-low-device hide-on-height-device my-btn circle circle-size-m mx-1 btn-open-menu"
+                    onclick="openMenu()">
+                        <i class="fa-solid fa-bars icon-bar"></i>
+                    </button>
+                </div>
+                <ul class="nav-list-on-mobile list-unstyled hide-on-height-device m-0" id="nav-list-on-mobile">
+                    <li class="py-2 nav-list-item-on-mobile">
+                        <p class="m-0 nav-nation-content-text">Free shipping for standard order over $100</p>
+                    </li>
+                    <li class="py-2 nav-list-item-on-mobile d-flex align-items-center">
+                        <p class="m-0 nav-nation-email me-2">fashe@example.com</p>
+                        <div class="nav-nation-select-container">
+                            <select name="" id="" class="nav-nation-select">
+                                <option class="nav-nation-option" value="">USA</option>
+                                <option class="nav-nation-option" value="">UK</option>
+                                <option class="nav-nation-option" value="">VN</option>
+                                <option class="nav-nation-option" value="">RUS</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="py-2 nav-list-item-on-mobile">
+                        <ul class="nav-nation-socials-list d-flex align-items-center m-0 p-0">
+                            <li class="nav-nation-socaials-items">
+                                <i class="fa-brands fa-facebook-f icon-socials ps-0"></i>
+                            </li>
+                            <li class="nav-nation-socaials-items">
+                                <i class="fa-brands fa-instagram icon-socials"></i>
+                            </li>
+                            <li class="nav-nation-socaials-items">
+                                <i class="fa-brands fa-pinterest-p icon-socials"></i>
+                            </li>
+                            <li class="nav-nation-socaials-items">
+                                <i class="fa-brands fa-snapchat icon-socials"></i>
+                            </li>
+                            <li class="nav-nation-socaials-items">
+                                <i class="fa-brands fa-youtube icon-socials"></i>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <ul class="sub-nav-list list-unstyled m-0">
+                            <li class="sub-nav-list-item">
+                                <a href="" class="sub-nav-list-item-link">Home</a>
+                            </li>
+                            <li class="sub-nav-list-item d-flex justify-content-between align-items-center">
+                                <a href="" class="sub-nav-list-item-link">Shop</a>
+                                <i class="fa-solid fa-angle-right text-white" style="cursor: pointer;"></i>
+                            </li>
+                            <li class="sub-nav-list-item">
+                                <a href="" class="sub-nav-list-item-link">Sale</a>
+                            </li>
+                            <li class="sub-nav-list-item">
+                                <a href="" class="sub-nav-list-item-link">Features</a>
+                            </li>
+                            <li class="sub-nav-list-item">
+                                <a href="" class="sub-nav-list-item-link">Blog</a>
+                            </li>
+                            <li class="sub-nav-list-item">
+                                <a href="" class="sub-nav-list-item-link">About</a>
+                            </li>
+                            <li class="sub-nav-list-item">
+                                <a href="" class="sub-nav-list-item-link">Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="cart container pt-4">
+            <div class="cart-header">
+                <h1 class="heading">Shopping cart</h1>
+            </div>
+            <div class="cart-content">
+                <div class="row">
+                    <div class="col-lg-8 col-sm-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product</th>
+                                    <th scope="col" class="text-center">Quantity</th>
+                                    <th scope="col" class="text-center">Total Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="align-middle">
+                                    <td>
+                                        <div class="cart-infor d-flex align-items-center">
+                                            <div class="cart-infor-img">
+                                                <img src="assets/image/camera/pedram-farjam-SXjTAlW1kLc-unsplash - Copy.jpg" alt="" class="w-100">
+                                            </div>
+                                            <div class="cart-infor-content">
+                                                <h3 class="cart-infor-content-heading">XT-30</h3>
+                                                <p class="cart-infor-content-desc m-0">Silver</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="cart-quantity d-flex align-items-center justify-content-center">
+                                            <button class="cart-quantity-decrement">
+                                                <i class="fa-solid fa-minus"></i>
+                                            </button>
+                                            <input type="text" class="cart-quantity-input text-center" value="1">
+                                            <button class="cart-quantity-increment">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="cart-price m-0">$300.00</p>
+                                    </td>
+                                    <td>
+                                        <button class="cart-delete-product">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="align-middle">
+                                    <td>
+                                        <div class="cart-infor d-flex align-items-center">
+                                            <div class="cart-infor-img">
+                                                <img src="assets/image/watch/auguras-pipiras-O43D6CYzxqM-unsplash - Copy.jpg" alt="" class="w-100">
+                                            </div>
+                                            <div class="cart-infor-content">
+                                                <h3 class="cart-infor-content-heading">Apple watch</h3>
+                                                <p class="cart-infor-content-desc m-0">Black</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="cart-quantity d-flex align-items-center justify-content-center">
+                                            <button class="cart-quantity-decrement">
+                                                <i class="fa-solid fa-minus"></i>
+                                            </button>
+                                            <input type="text" class="cart-quantity-input text-center" value="1">
+                                            <button class="cart-quantity-increment">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="cart-price m-0">$150.00</p>
+                                    </td>
+                                    <td>
+                                        <button class="cart-delete-product">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="text-center">
+                                        <h1 class="cart-subtotal-heading mb-3">Subtotal:</h1>
+                                        <h1 class="cart-shipping-heading m-0">Shipping:</h1>
+                                    </td>
+                                    <td class="text-center">
+                                        <p class="cart-subtotal-price mb-3">$450.00</p>
+                                        <div class="cart-shipping-price d-flex align-items-center">
+                                            <p class="cart-shipping-price-old m-0">$450.00</p>
+                                            <span class="cart-shipping-price-new">$0</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="payment-detail">
+                            <div class="payment-detail-container">
+                                <div class="payment-detail-header">
+                                    <h1 class="payment-detail-heading">Payment detail</h1>
+                                </div>
+                                <div class="payment-detail-content">
+                                    <div class="payment-detail-content-header">
+                                        <p class="m-0 payment-detail-content-heading">Payment method:</p>
+                                        <button class="my-second-btn btn-size-l my-btn-bg-d9 mt-3">
+                                            <i class="fa-brands fa-cc-paypal"></i>
+                                            <p class="m-0 d-inline">Paypal</p>
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <button class="my-second-btn btn-size-l mt-3 w-100">
+                                            <p class="m-0 d-inline">Checkout</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="login-signin" id="login-signin">
+            <div class="login-signin-container">
+                <div class="login-singin-close">
+                    <button class="my-btn-close" onclick="closeFormLogin()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="login" id="loginForm">
+                    <div class="login-header text-center">
+                        <h1 class="login-heading">SIGN IN</h1>
+                    </div>
+                    <div class="login-form">
+                        <form action="">
+                            <label for="">Email: </label>
+                            <br>
+                            <input type="email" placeholder="Your email" class="form-control mt-2" required>
+                            <br>
+                            <label for="">Password: </label>
+                            <br>
+                            <input type="password" placeholder="Your password" class="form-control mt-2" required>
+                            <br>
+                            <br>
+                            <button class="my-btn my-third-btn btn-size-l bg-primary-color w-100 btn-form-login">Login</button>
+                        </form>
+                        <a href="" class="login-forget">Forget your password?</a>
+                        <span class="sign-in-text">or</span>
+                        <p class="sign-in-text">If you don't have account! <span class="sign-in-form" onclick="openSignUp()">Sign up</span></p>
+                    </div>
+                    <div class="login-footer">
+                        <div class="login-footer-logo text-center">
+                            <img src="assets/image/logo.webp" alt="">
+                        </div>
+                        <div class="login-footer-content">
+                            <p class="login-footer-para m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                Iste quod non ad, error nesciunt natus, quas officiis maiores 
+                                necessitatibus labore obcaecati, officia soluta quo eius laborum 
+                                ducimus sunt consequuntur perspiciatis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sign-up" id="signUp">
+                    <div class="login-header text-center">
+                        <h1 class="login-heading">Sign Up</h1>
+                    </div>
+                    <div class="login-form">
+                        <form action="">
+                            <label for="">First name: </label>
+                            <br>
+                            <input type="text" placeholder="First name" class="form-control mt-2" required>
+                            <br>
+                            <label for="">Last name: </label>
+                            <br>
+                            <input type="text" placeholder="Last name" class="form-control mt-2" required>
+                            <br>
+                            <label for="">Email: </label>
+                            <br>
+                            <input type="email" placeholder="Your email" class="form-control mt-2" required>
+                            <br>
+                            <label for="">Password: </label>
+                            <br>
+                            <input type="password" placeholder="Your password" class="form-control mt-2" required>
+                            <br>
+                            <label for="">Confirm password: </label>
+                            <br>
+                            <input type="password" placeholder="Confirm password" class="form-control mt-2" required>
+                            <br>
+                            <br>
+                            <button class="my-btn my-third-btn btn-size-l bg-primary-color w-100 btn-form-login">Create account</button>
+                        </form>
+                        <p class="sign-in-text">You're already account? <span class="sign-in-form" onclick="openLoginForm()"">Sign In</span></p>
+                    </div>
+                    <div class="login-footer">
+                        <div class="login-footer-logo text-center">
+                            <img src="assets/image/logo.webp" alt="">
+                        </div>
+                        <div class="login-footer-content">
+                            <p class="login-footer-para m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                Iste quod non ad, error nesciunt natus, quas officiis maiores 
+                                necessitatibus labore obcaecati, officia soluta quo eius laborum 
+                                ducimus sunt consequuntur perspiciatis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="feature-product container">
+            <div class="feature-product-header text-center">
+                <h1 class="heading">FEATURED PRODUCTS</h1>
+            </div>
+            <div class="feature-product-container pt-5">
+                <div id="featureProduct" class="carousel slide" data-bs-ride="carousel">
+                    <div class="feature-product-carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="feature-product-card">
+                                    <div class="feature-product-card-img">
+                                        <img src="assets/image/camera/philomath-diary-e2EnGE0bjWY-unsplash.jpg" alt="" class="w-100">
+                                        <div class="feature-product-card-wrap">
+                                            <div class="feature-product-card-heart text-end p-2">
+                                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart" onmouseover="showFullHeart(0)"></i>
+                                                <i class="fa-solid fa-heart icon-heart-full iconFullHeart" onmouseout="hideFullHeart(0)"></i>
+                                            </div>
+                                            <div class="feature-product-card-btn text-center">
+                                                <button class="my-second-btn btn-size-l my-btn-bg-black">ADD TO CART</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-product-card-desc">
+                                        <a href="" class="feature-product-card-name">Cannon D-700</a>
+                                        <p class="feature-product-card-price">$175.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="feature-product-card">
+                                    <div class="feature-product-card-img">
+                                        <img src="assets/image/watch/auguras-pipiras-O43D6CYzxqM-unsplash.jpg" alt="" class="w-100">
+                                        <div class="feature-product-card-wrap">
+                                            <div class="feature-product-card-heart text-end p-2">
+                                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart" onmouseover="showFullHeart(1)"></i>
+                                                <i class="fa-solid fa-heart icon-heart-full iconFullHeart" onmouseout="hideFullHeart(1)"></i>
+                                            </div>
+                                            <div class="feature-product-card-btn text-center">
+                                                <button class="my-second-btn btn-size-l my-btn-bg-black">ADD TO CART</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-product-card-desc">
+                                        <a href="" class="feature-product-card-name">Apple watch SE</a>
+                                        <p class="feature-product-card-price">$85.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="feature-product-card">
+                                    <div class="feature-product-card-img">
+                                        <img src="assets/image/laptop/sarah-dorweiler-QeVmJxZOv3k-unsplash.jpg" alt="" class="w-100">
+                                        <div class="feature-product-card-wrap">
+                                            <div class="feature-product-card-heart text-end p-2">
+                                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart" onmouseover="showFullHeart(2)"></i>
+                                                <i class="fa-solid fa-heart icon-heart-full iconFullHeart" onmouseout="hideFullHeart(2)"></i>
+                                            </div>
+                                            <div class="feature-product-card-btn text-center">
+                                                <button class="my-second-btn btn-size-l my-btn-bg-black">ADD TO CART</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-product-card-desc">
+                                        <a href="" class="feature-product-card-name">MacBook</a>
+                                        <p class="feature-product-card-price">$200.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="feature-product-card">
+                                    <div class="feature-product-card-img">
+                                        <img src="assets/image/vr/adrian-deweerdt-kJ2xdKJZZ9k-unsplash.jpg" alt="" class="w-100">
+                                        <div class="feature-product-card-wrap">
+                                            <div class="feature-product-card-heart text-end p-2">
+                                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart" onmouseover="showFullHeart(3)"></i>
+                                                <i class="fa-solid fa-heart icon-heart-full iconFullHeart"" onmouseout="hideFullHeart(3)"></i>
+                                            </div>
+                                            <div class="feature-product-card-btn text-center">
+                                                <button class="my-second-btn btn-size-l my-btn-bg-black">ADD TO CART</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-product-card-desc">
+                                        <a href="" class="feature-product-card-name">Virtual Reality</a>
+                                        <p class="feature-product-card-price">$60.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="feature-product-card">
+                                    <div class="feature-product-card-img">
+                                        <img src="assets/image/vr/2h-media-rhY8nqf7hcc-unsplash.jpg" alt="" class="w-100">
+                                        <div class="feature-product-card-wrap">
+                                            <div class="feature-product-card-heart text-end p-2">
+                                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart" onmouseover="showFullHeart(4)"></i>
+                                                <i class="fa-solid fa-heart icon-heart-full iconFullHeart" onmouseout="hideFullHeart(4)"></i>
+                                            </div>
+                                            <div class="feature-product-card-btn text-center">
+                                                <button class="my-second-btn btn-size-l my-btn-bg-black">ADD TO CART</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-product-card-desc">
+                                        <a href="" class="feature-product-card-name">Virtual Reality V2.0</a>
+                                        <p class="feature-product-card-price">$95.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="feature-product-card">
+                                    <div class="feature-product-card-img">
+                                        <img src="assets/image/laptop/roberto-cortese-ejhjSZKTeeg-unsplash.jpg" alt="" class="w-100">
+                                        <div class="feature-product-card-wrap">
+                                            <div class="feature-product-card-heart text-end p-2">
+                                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart" onmouseover="showFullHeart(5)"></i>
+                                                <i class="fa-solid fa-heart icon-heart-full iconFullHeart" onmouseout="hideFullHeart(5)"></i>
+                                            </div>
+                                            <div class="feature-product-card-btn text-center">
+                                                <button class="my-second-btn btn-size-l my-btn-bg-black">ADD TO CART</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-product-card-desc">
+                                        <a href="" class="feature-product-card-name">Acer Predator</a>
+                                        <p class="feature-product-card-price">$95.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="feature-product-card">
+                                    <div class="feature-product-card-img">
+                                        <img src="assets/image/watch/laura-chouette-uinrorXrxt4-unsplash.jpg" alt="" class="w-100">
+                                        <div class="feature-product-card-wrap">
+                                            <div class="feature-product-card-heart text-end p-2">
+                                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart" onmouseover="showFullHeart(6)"></i>
+                                                <i class="fa-solid fa-heart icon-heart-full iconFullHeart" onmouseout="hideFullHeart(6)"></i>
+                                            </div>
+                                            <div class="feature-product-card-btn text-center">
+                                                <button class="my-second-btn btn-size-l my-btn-bg-black">ADD TO CART</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-product-card-desc">
+                                        <a href="" class="feature-product-card-name">Calvin Klein</a>
+                                        <p class="feature-product-card-price">$300.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="feature-product-card">
+                                    <div class="feature-product-card-img">
+                                        <img src="assets/image/camera/ravi-sharma-tTnpxJdjwqM-unsplash.jpg" alt="" class="w-100">
+                                        <div class="feature-product-card-wrap">
+                                            <div class="feature-product-card-heart text-end p-2">
+                                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart" onmouseover="showFullHeart(7)"></i>
+                                                <i class="fa-solid fa-heart icon-heart-full iconFullHeart"" onmouseout="hideFullHeart(7)"></i>
+                                            </div>
+                                            <div class="feature-product-card-btn text-center">
+                                                <button class="my-second-btn btn-size-l my-btn-bg-black">ADD TO CART</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-product-card-desc">
+                                        <a href="" class="feature-product-card-name">XT-30</a>
+                                        <p class="feature-product-card-price">$150.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-product-btn-container text-center">
+                        <button class="feature-product-btn-prev circle circle-size-m mx-3" type="button" data-bs-target="#featureProduct" data-bs-slide="prev">
+                            <i class="fa-solid fa-angle-left text-dark"></i>
+                        </button>
+                        <button class="feature-product-btn-next circle circle-size-m mx-3" type="button" data-bs-target="#featureProduct" data-bs-slide="next">
+                            <i class="fa-solid fa-angle-right text-dark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner">
+            <div class="banner-container container">
+                <div class="row">
+                    <div class="col-lg-6 banner-content-card">
+                        <div class="banner-content-inner-card">
+                            <img src="assets/image/camera/lilly-rum-snmtni2z6Qw-unsplash.jpg" alt="" class="w-100 banner-content-card-img">
+                            <div class="banner-content-collection text-center">
+                                <h1 class="banner-content-collection-heading text-white">The Beauty</h1>
+                                <h1 class="banner-content-collection-para text-white">LOOKBOOK</h1>
+                                <a href="" class="banner-content-collection-link text-white">VIEW COLLECTION</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 banner-content-card">
+                        <div class="banner-content-inner-card">
+                            <img src="assets/image/laptop/intro__ewz1ro7xs14y_large_2x.jpg" alt="" class="w-100 banner-content-card-img">
+                            <div class="banner-content-product text-center">
+                                <a class="banner-content-product-name">Macbook Pro</a>
+                                <p class="banner-content-price">$1900</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="our-blog">
+            <div class="our-blog-header text-center">
+                <h1 class="heading">OUR BLOG</h1>
+            </div>
+            <div class="our-blog-container container">
+                <div class="row pt-3">
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="our-blog-card">
+                            <div class="our-blog-card-img">
+                                <img src="assets/image/camera/lilly-rum-snmtni2z6Qw-unsplash.jpg" alt="" class="w-100">
+                            </div>
+                            <div class="our-blog-content">
+                                <a href="" class="our-blog-content-heading">Black Friday Guide: Best Sales & Discount Codes</a>
+                                <p class="our-blog-content-author">By Nancy Ward on August 22, 2022</p>
+                                <p class="our-blog-content-desc">Duis ut velit gravida nibh bibendum commodo. 
+                                    Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="our-blog-card-img">
+                            <img src="assets/image/laptop/james-mckinven-tpuAo8gVs58-unsplash.jpg" alt="" class="w-100">
+                        </div>
+                        <div class="our-blog-content">
+                            <a href="" class="our-blog-content-heading">The Macbook Nearly Every people Own</a>
+                            <p class="our-blog-content-author">By Nancy Ward on August 23, 2022</p>
+                            <p class="our-blog-content-desc">Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, 
+                                eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="our-blog-card-img">
+                            <img src="assets/image/watch/john-torcasio-TJrkkhdB39E-unsplash.jpg" alt="" class="w-100">
+                        </div>
+                        <div class="our-blog-content">
+                            <a href="" class="our-blog-content-heading">New York SS 2022 Watch: Omega</a>
+                            <p class="our-blog-content-author">By Nancy Ward on August 10, 2022</p>
+                            <p class="our-blog-content-desc">Duis ut velit gravida nibh bibendum commodo. 
+                                Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="follow">
+            <div class="follow-header text-center">
+                <h1 class="heading">@ FOLLOW US ON INSTAGRAM</h1>
+            </div>
+            <div class="container-fluid">
+                <div class="row pt-4">
+                    <div class="col-lg-3 col-sm-6 p-0">
+                        <div class="follow-card">
+                            <div class="follow-card-img">
+                                <img src="assets/image/laptop/paige-cody-ITTqjS3UpoY-unsplash.jpg" alt="" class="w-100">
+                                <div class="follow-card-wrap">
+                                    <div class="follow-card-heart text-end p-2">
+                                        <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                                    </div>
+                                    <div class="follow-card-btn text-center">
+                                        <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                            Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 p-0">
+                        <div class="follow-card">
+                            <div class="follow-card-img">
+                                <img src="assets/image/laptop/brooke-cagle-ICTKcvnXx_8-unsplash.jpg" alt="" class="w-100">
+                                <div class="follow-card-wrap">
+                                    <div class="follow-card-heart text-end p-2">
+                                        <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                                    </div>
+                                    <div class="follow-card-btn text-center">
+                                        <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                            Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 p-0">
+                        <div class="follow-card">
+                            <div class="follow-card-img">
+                                <img src="assets/image/watch/hunters-race--SDgOlirIaY-unsplash.jpg" alt="" class="w-100">
+                                <div class="follow-card-wrap">
+                                    <div class="follow-card-heart text-end p-2">
+                                        <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                                    </div>
+                                    <div class="follow-card-btn text-center">
+                                        <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                            Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 p-0">
+                        <div class="follow-card">
+                            <div class="follow-card-img">
+                                <img src="assets/image/camera/jamie-street-5eW9XUDwdW0-unsplash.jpg" alt="" class="w-100">
+                                <div class="follow-card-wrap">
+                                    <div class="follow-card-heart text-end p-2">
+                                        <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                                    </div>
+                                    <div class="follow-card-btn text-center">
+                                        <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                            Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="service">
+            <div class="service-container container-fluid">
+                <div class="row service-container-row">
+                    <div class="col-xl-4 col-sm-12 service-container-col">
+                        <div class="service-content">
+                            <h1 class="service-content-heading">Free Delivery Worldwide</h1>
+                            <a href="" class="service-content-link">Click here for more info</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-12 service-container-col">
+                        <div class="service-content">
+                            <h1 class="service-content-heading">30 Days Return</h1>
+                            <p href="" class="service-content-link">Simply return it within 30 days for an exchange.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-12 service-container-col">
+                        <div class="service-content">
+                            <h1 class="service-content-heading">Store Opening</h1>
+                            <p href="" class="service-content-link">Shop open from Monday to Sunday</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container container">
+                <div class="row">
+                    <div class="col-sm-12 col-xl-4 pt-3">
+                        <h1 class="footer-content-heading">GET IN TOUCH</h1>
+                        <p class="footer-content-para">Any questions? Let us know in store at 8th floor, 
+                            379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879</p>
+                        <div class="footer-content-socials">
+                            <ul class="footer-content-socials-list d-flex align-items-center m-0 p-0 list-unstyled">
+                                <li class="footer-content-socials-items">
+                                    <i class="fa-brands fa-facebook-f icon-socials ps-0"></i>
+                                </li>
+                                <li class="footer-content-socials-items">
+                                    <i class="fa-brands fa-instagram icon-socials"></i>
+                                </li>
+                                <li class="footer-content-socials-items">
+                                    <i class="fa-brands fa-pinterest-p icon-socials"></i>
+                                </li>
+                                <li class="footer-content-socials-items">
+                                    <i class="fa-brands fa-snapchat icon-socials"></i>
+                                </li>
+                                <li class="footer-content-socials-items">
+                                    <i class="fa-brands fa-youtube icon-socials"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-4 pt-3">
+                        <div class="row">
+                            <div class="col-sm-12 col-xl-4">
+                                <h1 class="footer-content-heading">CATEGORIES</h1>
+                                <ul class="footer-content-list list-unstyled">
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Camera</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Laptop</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Watch</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">VR</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 col-xl-4">
+                                <h1 class="footer-content-heading">LINKS</h1>
+                                <ul class="footer-content-list list-unstyled">
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Search</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">About us</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Contact us</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Returns</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 col-xl-4">
+                                <h1 class="footer-content-heading">HELP</h1>
+                                <ul class="footer-content-list list-unstyled">
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Track order</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Returns</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">Shipping</a>
+                                    </li>
+                                    <li class="footer-content-item">
+                                        <a href="" class="footer-content-link">FAQs</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-4 pt-3">
+                        <h1 class="footer-content-heading">NEWSLETTER</h1>
+                        <div class="footer-form">
+                            <form action="">
+                                <input type="email" placeholder="email@example.com" class="footer-email">
+                            </form>
+                        </div>
+                        <button class="my-second-btn btn-size-l my-btn-bg-black">SUBSCRIBE</button>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <ul class="footer-pay-method list-unstyled d-flex justify-content-center">
+                        <li class="footer-pay-method-item">
+                            <a href="" class="footer-pay-method-link">
+                                <i class="fa-brands fa-cc-paypal"></i>
+                            </a>
+                        </li>
+                        <li class="footer-pay-method-item">
+                            <a href="" class="footer-pay-method-link">
+                                <i class="fa-brands fa-cc-visa"></i>
+                            </a>
+                        </li>
+                        <li class="footer-pay-method-item">
+                            <a href="" class="footer-pay-method-link">
+                                <i class="fa-brands fa-cc-mastercard"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <h1 class="footer-copy-right">Copyright © 2017 Colorlib. All rights reserved.</h1>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="assets/js/main.js"></script>
+</html>

@@ -1,0 +1,122 @@
+.cart-infor-img{
+    width: 97px;
+    overflow: hidden;
+}
+
+.cart-infor-img > img{
+    transition: .5s;
+}
+
+.cart-infor-img > img:hover{
+    transform: scale(1.1);
+}
+
+.cart-infor-content{
+    margin-left: 15px;
+}
+
+.cart-infor-content-heading{
+    font-size: 18px;
+    color: var(--third-color-text);
+    letter-spacing: 1px;
+}
+
+.cart-infor-content-desc{
+    font-size: 15px;
+    color: var(--fourth-color-text);
+    letter-spacing: 1px;
+}
+
+.cart-quantity-input{
+    max-width: 150px;
+    border: 1px solid #d9d9d9;
+    outline: none;
+}
+
+.cart-delete-product,
+.cart-quantity-increment,
+.cart-quantity-decrement{
+    border: none;
+    outline: none;
+    color: var(--fourth-color-text);
+    margin: 0 10px;
+    background-color: var(--primary-color-bg);
+    padding: 5px;
+    transition: .4s;
+    font-size: 17px;
+}
+
+.cart-delete-product:hover,
+.cart-quantity-increment:hover,
+.cart-quantity-decrement:hover{
+    color: var(--primary-color);
+}
+
+.cart-price{
+    color: var(--fourth-color-text);
+    font-size: 17px;
+}
+
+.cart-shipping-heading,
+.cart-subtotal-heading{
+    font-size: 18px;
+}
+
+.cart-subtotal-price,
+.cart-shipping-price{
+    font-size: 17px;
+    margin-bottom: 0;
+    /* margin-left: 10px; */
+    color: var(--fourth-color-text);
+}
+
+.cart-shipping-price-old{
+    text-decoration: line-through;
+}
+
+.cart-shipping-price-new{
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+tbody>tr:last-child{
+    border-color: #ffffff !important;
+}
+
+.payment-detail-container{
+    background-color: #d9d9d9;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.payment-detail-content-header,
+.payment-detail-header{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.payment-detail-heading{
+    color: var(--second-color-bg);
+    font-size: 17px;
+    margin-bottom: 0;
+}
+
+.payment-detail-content{
+    margin-top: 20px;
+}
+
+.payment-detail-content-header > button > i{
+    font-size: 25px;
+    position: relative;
+    top: 2px;
+}
+
+.payment-detail-content-header > button > p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.payment-detail-content-heading{
+    font-size: 16px;
+    color: var(--fourth-color-text);
+}

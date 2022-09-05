@@ -1,0 +1,143 @@
+<header class="header-container" id="header">
+    <div class="nav-nation hide-on-low-device container-fluid d-flex justify-content-between align-items-center">
+        <div class="nav-nation-socials">
+            <ul class="nav-nation-socials-list d-flex align-items-center m-0 p-0">
+                <li class="nav-nation-socaials-items">
+                    <i class="fa-brands fa-facebook-f icon-socials"></i>
+                </li>
+                <li class="nav-nation-socaials-items">
+                    <i class="fa-brands fa-instagram icon-socials"></i>
+                </li>
+                <li class="nav-nation-socaials-items">
+                    <i class="fa-brands fa-pinterest-p icon-socials"></i>
+                </li>
+                <li class="nav-nation-socaials-items">
+                    <i class="fa-brands fa-snapchat icon-socials"></i>
+                </li>
+                <li class="nav-nation-socaials-items">
+                    <i class="fa-brands fa-youtube icon-socials"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-nation-content">
+            <p class="m-0 nav-nation-content-text">Free shipping for standard order over $100</p>
+        </div>
+        <div class="nav-nation-list d-flex align-items-center">
+            <p class="mx-2 my-0 nav-nation-email">fashe@example.com</p>
+            <div class="nav-nation-select-container">
+                <select name="" id="" class="nav-nation-select">
+                    <option class="nav-nation-option" value="">USA</option>
+                    <option class="nav-nation-option" value="">UK</option>
+                    <option class="nav-nation-option" value="">VN</option>
+                    <option class="nav-nation-option" value="">RUS</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="nav-main" class="nav-main container-fluid d-flex justify-content-between align-items-center">
+        <div class="nav-logo col-sm-2">
+            <a href="/home-page.html">
+                <img src="data:image/webp;base64,UklGRtgBAABXRUJQVlA4TMwBAAAvd4AGEM9AkG1ThTndX+sKAoEkhf259hEIpDiFSTbINtL5u53CIXwRPpHq4eyDAwAMMBQgS7atto72lQi6EqGd7fkPFbig585fEf2fAL57kn7kV/uNZOX+n8upTtqgxZbUS7upzlyHiEg8J06V9tAbolqhHGL2ZZScmEMyeCdDVwznJkZdljBnmU49ldliMO+lV73YXX0E/NRWmktmPWvEd6qTWVcfIU2Jb9zUuUpyE2U+rok6TgB+SgpUmd3qsgNIsrIssWqTRLQNI4UyUIBLtwPboToKQBiECjo4HoFEXwcH1EHQQlttF6CDHdh6nlZ77jHUiT0Cvtd1emHaAIoly9oHyE6mA5BNIuKyJTRY0qJyW9lk3gOk3SZbNsSfhJdVcOpuEX9DXlTh6+3p6enDkrBW6bsCyZYLbdbYk7qOrbdluoX+51P39ceaPDiB0xbE6wVwDsoNsSdyqKrucvZeek8fa8rAVdJmqjJfb8ijsTZfT8PXNWw9e6Nzjhs4pkSBz9Hzorhqn7tuwU+JwtfodVHZLN5wybRyD2HGFeBl8LGIvI/OaEB3m0vcxeVMB+1X75VVoKE5MiYoqr2gmfYmSOo7URl+vT89PX0A" 
+            alt="">
+            </a>
+        </div>
+        <div class="nav-list-container hide-on-low-device col-sm-8 text-center">
+            <ul class="nav-list d-flex list-unstyled m-0 justify-content-center">
+                <li class="nav-list-item">
+                    <a href="/home-page.html" class="nav-list-item-link">Home</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="" class="nav-list-item-link">Shop</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="" class="nav-list-item-link">Sale</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="" class="nav-list-item-link">Features</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="" class="nav-list-item-link">Blog</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="" class="nav-list-item-link">About</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="" class="nav-list-item-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-information col-sm-2 d-flex justify-content-end">
+            <button class="circle circle-size-m my-btn mx-1" id="login" onclick="onpenFormLogin()">
+                <i class="fa-solid fa-user icon-user"></i>
+            </button>
+            <button class="circle circle-size-m my-btn mx-1">
+                <i class="fa-solid fa-bag-shopping icon-bag" onclick="redirectToCart()"></i>
+            </button>
+            <button class="show-on-low-device hide-on-height-device my-btn circle circle-size-m mx-1 btn-open-menu"
+            onclick="openMenu()">
+                <i class="fa-solid fa-bars icon-bar"></i>
+            </button>
+        </div>
+        <ul class="nav-list-on-mobile list-unstyled hide-on-height-device m-0" id="nav-list-on-mobile">
+            <li class="py-2 nav-list-item-on-mobile">
+                <p class="m-0 nav-nation-content-text">Free shipping for standard order over $100</p>
+            </li>
+            <li class="py-2 nav-list-item-on-mobile d-flex align-items-center">
+                <p class="m-0 nav-nation-email me-2">fashe@example.com</p>
+                <div class="nav-nation-select-container">
+                    <select name="" id="" class="nav-nation-select">
+                        <option class="nav-nation-option" value="">USA</option>
+                        <option class="nav-nation-option" value="">UK</option>
+                        <option class="nav-nation-option" value="">VN</option>
+                        <option class="nav-nation-option" value="">RUS</option>
+                    </select>
+                </div>
+            </li>
+            <li class="py-2 nav-list-item-on-mobile">
+                <ul class="nav-nation-socials-list d-flex align-items-center m-0 p-0">
+                    <li class="nav-nation-socaials-items">
+                        <i class="fa-brands fa-facebook-f icon-socials ps-0"></i>
+                    </li>
+                    <li class="nav-nation-socaials-items">
+                        <i class="fa-brands fa-instagram icon-socials"></i>
+                    </li>
+                    <li class="nav-nation-socaials-items">
+                        <i class="fa-brands fa-pinterest-p icon-socials"></i>
+                    </li>
+                    <li class="nav-nation-socaials-items">
+                        <i class="fa-brands fa-snapchat icon-socials"></i>
+                    </li>
+                    <li class="nav-nation-socaials-items">
+                        <i class="fa-brands fa-youtube icon-socials"></i>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="sub-nav-list list-unstyled m-0">
+                    <li class="sub-nav-list-item">
+                        <a href="" class="sub-nav-list-item-link">Home</a>
+                    </li>
+                    <li class="sub-nav-list-item d-flex justify-content-between align-items-center">
+                        <a href="" class="sub-nav-list-item-link">Shop</a>
+                        <i class="fa-solid fa-angle-right text-white" style="cursor: pointer;"></i>
+                    </li>
+                    <li class="sub-nav-list-item">
+                        <a href="" class="sub-nav-list-item-link">Sale</a>
+                    </li>
+                    <li class="sub-nav-list-item">
+                        <a href="" class="sub-nav-list-item-link">Features</a>
+                    </li>
+                    <li class="sub-nav-list-item">
+                        <a href="" class="sub-nav-list-item-link">Blog</a>
+                    </li>
+                    <li class="sub-nav-list-item">
+                        <a href="" class="sub-nav-list-item-link">About</a>
+                    </li>
+                    <li class="sub-nav-list-item">
+                        <a href="" class="sub-nav-list-item-link">Contact</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
