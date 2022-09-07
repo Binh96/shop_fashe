@@ -67,12 +67,53 @@
             </ul>
         </div>
         <div class="nav-information col-sm-2 d-flex justify-content-end">
-            <button class="circle circle-size-m my-btn mx-1" id="login" onclick="onpenFormLogin()">
-                <i class="fa-solid fa-user icon-user"></i>
-            </button>
-            <button class="circle circle-size-m my-btn mx-1" routerLink="/cart">
-                <i class="fa-solid fa-bag-shopping icon-bag"></i>
-            </button>
+            <div class="btn-form-login-out">
+                <button class="circle circle-size-m my-btn mx-1" id="login" onclick="onpenFormLogin()">
+                    <i class="fa-solid fa-user icon-user"></i>
+                </button>
+                <div class="form-infor-login">
+                    <ul class="form-infor-list m-0">
+                        <li class="form-infor-item">
+                            <p class="m-0 form-infor-item-text">Personal information</p>
+                        </li>
+                        <li class="form-infor-item">
+                            <p class="m-0 form-infor-item-text">Your Cart</p>
+                        </li>
+                        <li class="form-infor-item">
+                            <p class="m-0 form-infor-item-text">Log out</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-form-cart">
+                <button class="circle circle-size-m my-btn mx-1" routerLink="/cart">
+                    <i class="fa-solid fa-bag-shopping icon-bag"></i>
+                </button>
+                <div class="header__cart-list">
+                    <span class="header__cart-list--no-cart-msg">No product</span>
+                    <h4 class="header__cart-heading">Product</h4>
+                    <ul class="header__cart-list-item">
+                        <li class="header__cart-item">
+                            <img src="/assets/image/camera/jakob-owens-FKyHyNowp-4-unsplash.jpg" alt="" class="header__cart-img">
+                            <div class="header__cart-item-info">
+                                <div class="header__cart-item-head">
+                                    <h5 class="header__cart-item-name">XT-3</h5>
+                                    <div class="header__cart-item-price-wrap">
+                                        <span class="header__cart-item-price">$200</span>
+                                        <span class="header__cart-item-multiply">x</span>
+                                        <span class="header__cart-item-quantity">2</span>
+                                    </div>
+                                </div>
+                                <div class="header__cart-item-body">
+                                    <span class="header__cart-item-description">Color: Silver</span>
+                                    <span class="header__cart-item-remove">Remove</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a routerLink="/cart" class="header__cart-view-cart btn btn--primary my-btn my-third-btn btn-size-m btn-size-l">Go to Cart</a>
+                </div>
+            </div>
             <button class="show-on-low-device hide-on-height-device my-btn circle circle-size-m mx-1 btn-open-menu"
             onclick="openMenu()">
                 <i class="fa-solid fa-bars icon-bar"></i>

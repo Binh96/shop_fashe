@@ -10,14 +10,14 @@
                 <h1 class="login-heading">SIGN IN</h1>
             </div>
             <div class="login-form">
-                <form action="">
+                <form [formGroup]="formLogin" (ngSubmit)="checkLogin()">
                     <label for="">Email: </label>
                     <br>
-                    <input type="email" placeholder="Your email" class="form-control mt-2" required>
+                    <input type="text" formControlName="username" placeholder="Your email" class="form-control mt-2" required>
                     <br>
                     <label for="">Password: </label>
                     <br>
-                    <input type="password" placeholder="Your password" class="form-control mt-2" required>
+                    <input type="password" formControlName="password" placeholder="Your password" class="form-control mt-2" required>
                     <br>
                     <br>
                     <button class="my-btn my-third-btn btn-size-l bg-primary-color w-100 btn-form-login">Login</button>

@@ -25,12 +25,9 @@ import java.util.Collection;
 import java.util.List;
 
 @Service
-public class AppUserServiceImpl implements IAppUserService, UserDetailsService {
+public class AppUserServiceImpl implements IAppUserService {
     @Autowired
     private AppUserRepository appUserRepository;
-
-    @Autowired
-    private UserRoleRepository userRoleRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -51,17 +48,4 @@ public class AppUserServiceImpl implements IAppUserService, UserDetailsService {
         return appUserRepository.getAppUser(pageable);
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        AppUser appUser = appUserRepository.findByName(username);
-        List<UserRole> userRoles = userRoleRepository.findUserRolByName(appUser);
-        List<GrantedAuthority> grantList = new ArrayList<>();
-        if (userRoles != null) {
-            for (UserRole userRole : userRoles) {
-                GrantedAuthority authority = new SimpleGrantedAuthority(userRole.getAppRole().getRoleName());
-                grantList.add(authority);
-            }
-        }
-        return new org.springframework.security.core.userdetails.User(appUser.getUsername(), appUser.getPassword(), grantList);
-    }
 }

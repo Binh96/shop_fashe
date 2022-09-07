@@ -145,6 +145,18 @@
     opacity: 0.8;
 }
 
+.btn-form-login-out{
+    position: relative;
+	display: inline-block;
+	padding: 0 5px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.btn-form-login-out:hover .form-infor-login{
+    display: block;
+}
+
 .sign-in-text,
 .login-forget{
     display: block;
@@ -192,6 +204,48 @@
     display: none;
 }
 
+.form-infor-login{
+    z-index: 1;
+	cursor: default;
+	border-radius: 2px;
+	width: 150px;
+	position: absolute;
+	top: calc(100% + 10px);
+	right: 5px;
+	background-color: var(--primary-color-bg);
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+	display: none;
+	animation: fadeIn ease-in 0.2s;
+}
+
+.form-infor-login::after{
+	cursor: pointer;
+	content: "";
+	position: absolute;
+	right: 5px;
+	top: -26px;
+	border-width: 16px 20px;
+	border-style: solid;
+	border-color: transparent transparent var(--primary-color-bg) transparent;
+}
+
+.form-infor-list{
+    padding-top: 5px;
+    padding-left: 5px;
+    list-style: none;
+}
+
+.form-infor-item{
+    padding: 7px 5px;
+}
+
+.form-infor-item:hover{
+    background-color: #f8f8f8;
+}
+
+.form-infor-item-text{
+    font-size: 14px;
+}
 
 
 
