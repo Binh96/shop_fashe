@@ -1,5 +1,6 @@
 package com.pxb.backend.service.impl;
 
+import com.pxb.backend.model.AppUser;
 import com.pxb.backend.model.UserRole;
 import com.pxb.backend.repository.UserRoleRepository;
 import com.pxb.backend.service.IUserRoleService;
@@ -13,7 +14,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
     @Autowired
     private UserRoleRepository userRoleRepository;
     @Override
-    public List<UserRole> getUserRole() {
-        return userRoleRepository.findAll();
+    public List<UserRole> getUserRole(AppUser appUser) {
+        return userRoleRepository.findUserRolByName(appUser);
     }
 }

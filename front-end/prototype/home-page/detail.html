@@ -57,7 +57,7 @@
             </div>
             <div id="nav-main" class="nav-main container-fluid d-flex justify-content-between align-items-center">
                 <div class="nav-logo col-sm-2">
-                    <a href="/home-page.html">
+                    <a href="home-page.html">
                         <img src="data:image/webp;base64,UklGRtgBAABXRUJQVlA4TMwBAAAvd4AGEM9AkG1ThTndX+sKAoEkhf259hEIpDiFSTbINtL5u53CIXwRPpHq4eyDAwAMMBQgS7atto72lQi6EqGd7fkPFbig585fEf2fAL57kn7kV/uNZOX+n8upTtqgxZbUS7upzlyHiEg8J06V9tAbolqhHGL2ZZScmEMyeCdDVwznJkZdljBnmU49ldliMO+lV73YXX0E/NRWmktmPWvEd6qTWVcfIU2Jb9zUuUpyE2U+rok6TgB+SgpUmd3qsgNIsrIssWqTRLQNI4UyUIBLtwPboToKQBiECjo4HoFEXwcH1EHQQlttF6CDHdh6nlZ77jHUiT0Cvtd1emHaAIoly9oHyE6mA5BNIuKyJTRY0qJyW9lk3gOk3SZbNsSfhJdVcOpuEX9DXlTh6+3p6enDkrBW6bsCyZYLbdbYk7qOrbdluoX+51P39ceaPDiB0xbE6wVwDsoNsSdyqKrucvZeek8fa8rAVdJmqjJfb8ijsTZfT8PXNWw9e6Nzjhs4pkSBz9Hzorhqn7tuwU+JwtfodVHZLN5wybRyD2HGFeBl8LGIvI/OaEB3m0vcxeVMB+1X75VVoKE5MiYoqr2gmfYmSOo7URl+vT89PX0A" 
                     alt="">
                     </a>
@@ -65,10 +65,10 @@
                 <div class="nav-list-container hide-on-low-device col-sm-8 text-center">
                     <ul class="nav-list d-flex list-unstyled m-0 justify-content-center">
                         <li class="nav-list-item">
-                            <a href="/home-page.html" class="nav-list-item-link">Home</a>
+                            <a href="home-page.html" class="nav-list-item-link">Home</a>
                         </li>
                         <li class="nav-list-item">
-                            <a href="" class="nav-list-item-link">Shop</a>
+                            <a href="store.html" class="nav-list-item-link">Shop</a>
                         </li>
                         <li class="nav-list-item">
                             <a href="" class="nav-list-item-link">Sale</a>
@@ -92,7 +92,7 @@
                         <i class="fa-solid fa-user icon-user"></i>
                     </button>
                     <button class="circle circle-size-m my-btn mx-1">
-                        <i class="fa-solid fa-bag-shopping icon-bag"></i>
+                        <i class="fa-solid fa-bag-shopping icon-bag" onclick="redirectToCart()"></i>
                     </button>
                     <button class="show-on-low-device hide-on-height-device my-btn circle circle-size-m mx-1 btn-open-menu"
                     onclick="openMenu()">
@@ -279,7 +279,7 @@
                                             <i class="fa-solid fa-plus"></i>
                                         </button>
                                     </div>
-                                    <button class="ms-3 my-btn my-second-btn my-btn-bg-black btn-size-l">Add To Cart</button>
+                                    <button class="ms-3 my-btn my-second-btn my-btn-bg-black btn-size-l" onclick="toCart()">Add To Cart</button>
                                 </div>
                             </div>
                         </div>

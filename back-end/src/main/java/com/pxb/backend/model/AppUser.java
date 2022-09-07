@@ -21,13 +21,13 @@ public class AppUser {
     @Column(name = "ngay_tao")
     private String dateCreate;
 
-    @Column(name = "ten_nguoi_dung")
-    private String nameUser;
+    @Column(name = "ten_nguoi_dung", columnDefinition = "varchar(255) unique")
+    private String username;
 
     @Column(name = "mat_khau")
     private String password;
 
-    @OneToMany(mappedBy = "appUser")
+    @OneToMany(mappedBy = "appUser", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<UserRole> userRoleList;
 

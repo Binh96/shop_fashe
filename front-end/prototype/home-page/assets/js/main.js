@@ -54,9 +54,11 @@ function onpenFormLogin(){
 
 function closeFormLogin(){
     document.getElementById('login-signin').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'block';
 }
 
 function openSignUp(){
+    document.getElementById('login-signin').style.display = 'block';
     document.getElementById('signUp').style.display = 'block';
     document.getElementById('loginForm').style.display = 'none';
 }
@@ -67,6 +69,13 @@ function openLoginForm(){
 }
 
 function redirectToCart(){
-    window.location.assign('/cart.html');
+    window.location.assign('cart.html');
+}
+
+function toCart(){
+    window.location.assign('cart.html');
+}
+function toStore(){
+    window.location.assign('store.html');
 }
 
