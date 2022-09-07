@@ -36,14 +36,14 @@ public class AppUserController {
         }
         return new ResponseEntity<>(appUsers, HttpStatus.OK);
     }
-//    @GetMapping("")
-//    public ResponseEntity<List<UserRole>> getUser(){
-//        List<UserRole> userRoles = iAppUserService.;
-//        if(appUsers.isEmpty()){
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<>(appUsers, HttpStatus.OK);
-//    }
+    @PostMapping("/login")
+    public ResponseEntity<?> checkLogin(@RequestBody AppUser appUser1){
+        AppUser appUser = iAppUserService.findByName(appUser1.getUsername());
+        if(appUser != null){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    }
 
     @PostMapping(value="/save", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
     public ResponseEntity<AppUser> saveUser(AppUser appUser){

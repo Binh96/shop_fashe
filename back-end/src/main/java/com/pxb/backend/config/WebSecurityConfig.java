@@ -28,6 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
@@ -39,6 +40,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(STATELESS);
         http.authorizeRequests().anyRequest().permitAll();
         http.addFilter(new CustomerAuthenticationFilter(authenticationManagerBean()));
+        // We don't need CSRF for this example
+//        http.csrf().disable()
+//                // dont authenticate this particular request
+//                .authorizeRequests().antMatchers(
+//                        "/**"
+//                ).permitAll().
+//                // all other requests need to be authenticated
+//                        anyRequest().authenticated();
     }
 
     @Bean
