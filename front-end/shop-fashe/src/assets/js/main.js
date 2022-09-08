@@ -48,9 +48,6 @@ function hideFullHeart(para){
     }
 }
 
-function onpenFormLogin(){
-    document.getElementById('login-signin').style.display = 'block';
-}
 
 function closeFormLogin(){
     document.getElementById('login-signin').style.display = 'none';

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  checkLogOut: boolean = false;
+
+  constructor(private authentication: AuthenticationService) { }
 
   ngOnInit(): void {
+  }
+
+  logOut(){
+    this.authentication.logOut();
+    this.checkLogOut = false;
+  }
+
+  logIn(param){
+    this.checkLogOut = param;
+  }
+
+  openFormLogin(){
+    if(this.checkLogOut){
+      document.getElementById('login-signin').style.display = 'none';
+    }
+    else{
+      document.getElementById('login-signin').style.display = 'block';
+    }
   }
 
 }

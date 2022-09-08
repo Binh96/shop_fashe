@@ -13,6 +13,8 @@ export class User {
 })
 export class AuthenticationService {
 
+  userLogIn: boolean;
+
   constructor(
     private httpClient: HttpClient
   ) {
@@ -25,15 +27,18 @@ export class AuthenticationService {
           sessionStorage.setItem('username', username);
           let tokenStr = 'Bearer ' + userData.token;
           sessionStorage.setItem('token', tokenStr);
+          this.isUserLoggedIn();
           return userData;
         }
       )
     );
   }
 
-
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username');
+    if(user != null){
+      this.userLogIn = true;
+    }
     console.log(!(user === null));
     return !(user === null);
   }

@@ -68,10 +68,10 @@
         </div>
         <div class="nav-information col-sm-2 d-flex justify-content-end">
             <div class="btn-form-login-out">
-                <button class="circle circle-size-m my-btn mx-1" id="login" onclick="onpenFormLogin()">
+                <button class="circle circle-size-m my-btn mx-1" id="login" (click)="openFormLogin()">
                     <i class="fa-solid fa-user icon-user"></i>
                 </button>
-                <div class="form-infor-login">
+                <div class="form-infor-login" *ngIf="checkLogOut">
                     <ul class="form-infor-list m-0">
                         <li class="form-infor-item">
                             <p class="m-0 form-infor-item-text">Personal information</p>
@@ -79,7 +79,7 @@
                         <li class="form-infor-item">
                             <p class="m-0 form-infor-item-text">Your Cart</p>
                         </li>
-                        <li class="form-infor-item">
+                        <li class="form-infor-item" (click)="logOut()">
                             <p class="m-0 form-infor-item-text">Log out</p>
                         </li>
                     </ul>
@@ -182,4 +182,4 @@
         </ul>
     </div>
 </header>
-<app-login></app-login>
+<app-login (checkLogIn)="logIn($event)"></app-login>
