@@ -1,0 +1,254 @@
+<section class="create-product-container container">
+    <form action="" [formGroup]="product" (ngSubmit)="createProduct()">
+        <div class="row create-product-bt-container justify-content-end">
+            <div class="col-lg-5 col-sm-5 d-flex justify-content-end">
+                <button class="my-second-btn btn-size-l bg-fourth-color mx-3">Create</button>
+                <button class="my-second-btn btn-size-l my-btn-bg-black" routerLink="">Cancel</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="row">
+                    <div class="create-product-line col-lg-6 col-sm-12">
+                        <label for="" class="create-product-heading">Name Product</label>
+                        <input type="text" class="create-product-input" placeholder="Name product" formControlName="nameProduct">
+                        <div class="create-product-valid" *ngIf="!product.controls.nameProduct.valid && (product.controls.nameProduct.dirty || product.controls.nameProduct.touched)">
+                            <div class="text-danger" [hidden]="!product.controls.nameProduct.errors.required">Enter name of product, please.</div>
+                        </div>
+                    </div>
+                    <div class="create-product-line col-lg-6 col-sm-12">
+                        <label for="" class="create-product-heading">Category</label>
+                        <select name="" id="" class="create-product-input" formControlName="categories">
+                            <option value="">--Select category--</option>
+                            <option [ngValue]="item" *ngFor="let item of categories">
+                                {{item.tenDanhMuc}}
+                            </option>
+                        </select>
+                        <div class="create-product-valid" *ngIf="!product.controls.nameProduct.valid && (product.controls.nameProduct.dirty || product.controls.nameProduct.touched)">
+                            <div class="text-danger" [hidden]="!product.controls.nameProduct.errors.required">Enter name of product, please.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="create-product-line">
+                            <label for="" class="create-product-heading">Price</label>
+                            <input type="text" formControlName="price" class="create-product-input" placeholder="Price">
+                            <div class="create-product-valid" *ngIf="!product.controls.price.valid && (product.controls.price.dirty || product.controls.price.touched)">
+                                <div class="text-danger" [hidden]="!product.controls.price.errors.required">Enter price of product, please.</div>
+                            </div>
+                        </div>
+                        <div class="create-product-line">
+                            <label for="" class="create-product-heading">Quantity</label>
+                            <input type="text" formControlName="quantity" class="create-product-input" placeholder="Quantity">
+                            <div class="create-product-valid" *ngIf="!product.controls.quantity.valid && (product.controls.quantity.dirty || product.controls.quantity.touched)">
+                                <div class="text-danger" [hidden]="!product.controls.quantity.errors.required">Enter quantity of product, please.</div>
+                            </div>
+                        </div>
+                        <div class="create-product-line">
+                            <label for="" class="create-product-heading">Origin</label>
+                            <input type="text" formControlName="madeIn" class="create-product-input" placeholder="Orgin">
+                            <div class="create-product-valid" *ngIf="!product.controls.madeIn.valid && (product.controls.madeIn.dirty || product.controls.madeIn.touched)">
+                                <div class="text-danger" [hidden]="!product.controls.madeIn.errors.required">Enter origin of product, please.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="create-product-line">
+                            <label for="" class="create-product-heading">Picture</label>
+                            <div class="create-product-inner-line d-flex align-items-center">
+                                <div class="col-lg-8 col-sm-8 create-product-img-container">
+                                    <img [src]="srcImage" alt="" style="width: 100%; height: 100%" class="w-100" (click)="picture.click()">
+                                    <input type="file" class="create-product-input-file-img" formControlName="img" 
+                                    accept=".jpg, .png, .jpeg" (change)="choosePicture($event)" style="display: none;" #picture>
+                                </div>
+                                <div class="create-product-valid" *ngIf="!product.controls.img.valid && (product.controls.img.dirty || product.controls.img.touched)">
+                                    <div class="text-danger" [hidden]="!product.controls.img.errors.required">Enter img of product, please.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="create-product-line col-lg-4 col-sm-12">
+                        <label for="" class="create-product-heading">Status</label>
+                        <input type="text" class="create-product-input" placeholder="Status" formControlName="status">
+                        <div class="create-product-valid" *ngIf="!product.controls.status.valid && (product.controls.status.dirty || product.controls.status.touched)">
+                            <div class="text-danger" [hidden]="!product.controls.status.errors.required">Enter status of product, please.</div>
+                        </div>
+                    </div>
+                    <div class="create-product-line col-lg-4 col-sm-12">
+                        <label for="" class="create-product-heading">Brand</label>
+                        <input type="text" class="create-product-input" placeholder="Brand" formControlName="brand">
+                        <div class="create-product-valid" *ngIf="!product.controls.brand.valid && (product.controls.brand.dirty || product.controls.brand.touched)">
+                            <div class="text-danger" [hidden]="!product.controls.brand.errors.required">Enter brand of product, please.</div>
+                        </div>
+                    </div>
+                    <div class="create-product-line col-lg-4 col-sm-12">
+                        <label for="" class="create-product-heading">Color</label>
+                        <input type="text" formControlName="color" class="create-product-input" placeholder="color">
+                        <div class="create-product-valid" *ngIf="!product.controls.color.valid && (product.controls.color.dirty || product.controls.color.touched)">
+                            <div class="text-danger" [hidden]="!product.controls.color.errors.required">Enter color of product, please.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <div class="create-product-line">
+                    <label for="" class="create-product-heading">Description</label>
+                    <ckeditor [editor]="Editor" id="editor" formControlName="desc"></ckeditor>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="create-product-line">
+                    <label for="" class="create-product-heading">Detail</label>
+                    <ckeditor [editor]="Editor" formControlName="detail"></ckeditor>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<section class="banner">
+    <div class="banner-container container">
+        <div class="row">
+            <div class="col-lg-6 banner-content-card">
+                <div class="banner-content-inner-card">
+                    <img src="/assets/image/camera/lilly-rum-snmtni2z6Qw-unsplash.jpg" alt="" class="w-100 banner-content-card-img">
+                    <div class="banner-content-collection text-center">
+                        <h1 class="banner-content-collection-heading text-white">The Beauty</h1>
+                        <h1 class="banner-content-collection-para text-white">LOOKBOOK</h1>
+                        <a href="" class="banner-content-collection-link text-white">VIEW COLLECTION</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 banner-content-card">
+                <div class="banner-content-inner-card">
+                    <img src="/assets/image/laptop/intro__ewz1ro7xs14y_large_2x.jpg" alt="" class="w-100 banner-content-card-img">
+                    <div class="banner-content-product text-center">
+                        <a class="banner-content-product-name">Macbook Pro</a>
+                        <p class="banner-content-price">$1900</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="our-blog">
+    <div class="our-blog-header text-center">
+        <h1 class="heading">OUR BLOG</h1>
+    </div>
+    <div class="our-blog-container container">
+        <div class="row pt-3">
+            <div class="col-lg-4 col-sm-12">
+                <div class="our-blog-card">
+                    <div class="our-blog-card-img">
+                        <img src="/assets/image/camera/lilly-rum-snmtni2z6Qw-unsplash.jpg" alt="" class="w-100">
+                    </div>
+                    <div class="our-blog-content">
+                        <a href="" class="our-blog-content-heading">Black Friday Guide: Best Sales & Discount Codes</a>
+                        <p class="our-blog-content-author">By Nancy Ward on August 22, 2022</p>
+                        <p class="our-blog-content-desc">Duis ut velit gravida nibh bibendum commodo. 
+                            Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="our-blog-card-img">
+                    <img src="/assets/image/laptop/james-mckinven-tpuAo8gVs58-unsplash.jpg" alt="" class="w-100">
+                </div>
+                <div class="our-blog-content">
+                    <a href="" class="our-blog-content-heading">The Macbook Nearly Every people Own</a>
+                    <p class="our-blog-content-author">By Nancy Ward on August 23, 2022</p>
+                    <p class="our-blog-content-desc">Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, 
+                        eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="our-blog-card-img">
+                    <img src="/assets/image/watch/john-torcasio-TJrkkhdB39E-unsplash.jpg" alt="" class="w-100">
+                </div>
+                <div class="our-blog-content">
+                    <a href="" class="our-blog-content-heading">New York SS 2022 Watch: Omega</a>
+                    <p class="our-blog-content-author">By Nancy Ward on August 10, 2022</p>
+                    <p class="our-blog-content-desc">Duis ut velit gravida nibh bibendum commodo. 
+                        Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="follow">
+    <div class="follow-header text-center">
+        <h1 class="heading">@ FOLLOW US ON INSTAGRAM</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row pt-4">
+            <div class="col-lg-3 col-sm-6 p-0">
+                <div class="follow-card">
+                    <div class="follow-card-img">
+                        <img src="/assets/image/laptop/paige-cody-ITTqjS3UpoY-unsplash.jpg" alt="" class="w-100">
+                        <div class="follow-card-wrap">
+                            <div class="follow-card-heart text-end p-2">
+                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                            </div>
+                            <div class="follow-card-btn text-center">
+                                <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 p-0">
+                <div class="follow-card">
+                    <div class="follow-card-img">
+                        <img src="/assets/image/laptop/brooke-cagle-ICTKcvnXx_8-unsplash.jpg" alt="" class="w-100">
+                        <div class="follow-card-wrap">
+                            <div class="follow-card-heart text-end p-2">
+                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                            </div>
+                            <div class="follow-card-btn text-center">
+                                <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 p-0">
+                <div class="follow-card">
+                    <div class="follow-card-img">
+                        <img src="/assets/image/watch/hunters-race--SDgOlirIaY-unsplash.jpg" alt="" class="w-100">
+                        <div class="follow-card-wrap">
+                            <div class="follow-card-heart text-end p-2">
+                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                            </div>
+                            <div class="follow-card-btn text-center">
+                                <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 p-0">
+                <div class="follow-card">
+                    <div class="follow-card-img">
+                        <img src="/assets/image/camera/jamie-street-5eW9XUDwdW0-unsplash.jpg" alt="" class="w-100">
+                        <div class="follow-card-wrap">
+                            <div class="follow-card-heart text-end p-2">
+                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                            </div>
+                            <div class="follow-card-btn text-center">
+                                <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

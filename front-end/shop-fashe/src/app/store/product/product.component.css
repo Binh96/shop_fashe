@@ -1,0 +1,24 @@
+.product-detail-nav-link{
+    text-decoration: none;
+    color: var(--second-color-bg);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.product-detail-nav-link.active{
+    color: var(--primary-color);
+}
+
+.product-detail-nav-link-container{
+    border-right: 1px solid #d9d9d9;
+    text-align: center;
+}
+
+.product-detail-nav-link-container:last-child{
+    border: none;
+}
+
+.product-detail-warn{
+    color: var(--second-color-text);
+    font-size: 17px;
+}

@@ -24,9 +24,11 @@ export class AuthenticationService {
     return this.httpClient.post<any>('http://localhost:8080/authenticate', {username, password}).pipe(
       map(
         userData => {
-          sessionStorage.setItem('username', username);
+          localStorage.setItem('username', username);
           let tokenStr = 'Bearer ' + userData.token;
-          sessionStorage.setItem('token', tokenStr);
+          localStorage.setItem('token', tokenStr);
+          let grantList = userData.grantList;
+          localStorage.setItem('grantList', grantList);
           this.isUserLoggedIn();
           return userData;
         }
@@ -35,16 +37,16 @@ export class AuthenticationService {
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username');
+    let user = localStorage.getItem('username');
     if(user != null){
       this.userLogIn = true;
     }
-    console.log(!(user === null));
     return !(user === null);
   }
 
   logOut() {
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('token');
+    localStorage.removeItem('grantList');
   }
 }

@@ -47,7 +47,14 @@
                     <a routerLink="" class="nav-list-item-link">Home</a>
                 </li>
                 <li class="nav-list-item">
-                    <a routerLink="/shop/product" class="nav-list-item-link">Shop</a>
+                    <a [routerLink]="['/shop/product', 'Camera']" class="nav-list-item-link">Shop</a>
+                    <div class="sub-nav-container">
+                        <ul class="sub-nav m-0 list-unstyled">
+                            <li class="sub-nav-item" *ngFor="let item of categories">
+                                <a class="m-0 sub-nav-list-text" [routerLink]="['/shop/product', item.tenDanhMuc]">{{item.tenDanhMuc}}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-list-item">
                     <a href="" class="nav-list-item-link">Sale</a>
@@ -74,10 +81,13 @@
                 <div class="form-infor-login" *ngIf="checkLogOut">
                     <ul class="form-infor-list m-0">
                         <li class="form-infor-item">
-                            <p class="m-0 form-infor-item-text">Personal information</p>
+                            <a routerLink="/personal" class="m-0 form-infor-item-text">Personal information</a>
+                        </li>
+                        <li class="form-infor-item" *ngIf="role == 'ROLE_ADMIN'">
+                            <a routerLink="/create-product" class="m-0 form-infor-item-text">Create Product</a>
                         </li>
                         <li class="form-infor-item">
-                            <p class="m-0 form-infor-item-text">Your Cart</p>
+                            <a routerLink="/cart" class="m-0 form-infor-item-text">Your Cart</a>
                         </li>
                         <li class="form-infor-item" (click)="logOut()">
                             <p class="m-0 form-infor-item-text">Log out</p>

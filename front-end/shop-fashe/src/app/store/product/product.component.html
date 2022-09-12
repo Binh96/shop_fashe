@@ -1,265 +1,84 @@
 <section class="product-detail">
+    <div class="product-detail-nav d-flex justify-content-center">
+        <div class="container pb-4">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-2 col-sm-2 product-detail-nav-link-container" *ngFor="let item of categories">
+                    <a [routerLink]="['/shop/product', item.tenDanhMuc]" class="product-detail-nav-link" [ngClass]="{'active': active == item.tenDanhMuc}">{{item.tenDanhMuc}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="product-detail-container container-fluid">
         <div class="row">
             <div class="col-xxl-2 col-md-4 hide-produce-sidebar">
-                <div class="product-detail-sidebar">
-                    <div class="product-detaile-search d-flex align-items-center justify-content-end mb-3">
-                        <input type="text" class="product-detail-search-input w-100" placeholder="Name device">
-                        <button class="my-btn my-third-btn btn-size-m ms-3 btn-size-sm my-btn-bg-black">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                    <div class="product-detail-filter mb-3">
-                        <div class="product-detail-filter-price">
-                            <h1 class="product-detail-filter">Filter price</h1>
-                            <div class="product-detail-filter-checkbox-container">
-                                <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                    <input type="checkbox">
-                                    <p class="product-detail-filter-content">$100 - $500</p>
+                <form action="">
+                    <div class="product-detail-sidebar">
+                        <div class="product-detaile-search d-flex align-items-center justify-content-end mb-3">
+                            <input type="text" [(ngModel)]="searchText" class="product-detail-search-input w-100" id="inputSearch" placeholder="Name device" (ngModelChange)="searchProduct()">
+                            <button class="my-btn my-third-btn btn-size-m ms-3 btn-size-sm my-btn-bg-black">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                        <div class="product-detail-filter mb-3">
+                            <div class="product-detail-filter-price">
+                                <h1 class="product-detail-filter">Filter price</h1>
+                                <div class="product-detail-filter-checkbox-container">
+                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3"
+                                    *ngFor="let box of priceFillter">
+                                        <input name="checked" type="checkbox" [value]="box.price" [(ngModel)]="box.checked" (change)="ngOnChanges($event)">
+                                        <p class="product-detail-filter-content">{{box.price}}</p>
+                                    </div>
                                 </div>
-                                <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                    <input type="checkbox">
-                                    <p class="product-detail-filter-content">$500 - $800</p>
-                                </div>
-                                <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                    <input type="checkbox">
-                                    <p class="product-detail-filter-content">$800 - $1000</p>
-                                </div>
-                                <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                    <input type="checkbox">
-                                    <p class="product-detail-filter-content">Greater than $100</p>
+                            </div>
+                        </div>
+                        <div class="product-detail-filter mb-3">
+                            <div class="product-detail-filter-price">
+                                <h1 class="product-detail-filter">Filter brand</h1>
+                                <div class="product-detail-filter-checkbox-container">
+                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
+                                        <input type="checkbox">
+                                        <p class="product-detail-filter-content">Apple</p>
+                                    </div>
+                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
+                                        <input type="checkbox">
+                                        <p class="product-detail-filter-content">G-Shock</p>
+                                    </div>
+                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
+                                        <input type="checkbox">
+                                        <p class="product-detail-filter-content">Casano</p>
+                                    </div>
+                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
+                                        <input type="checkbox">
+                                        <p class="product-detail-filter-content">Rolex</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="product-detail-filter mb-3">
-                        <div class="product-detail-filter-price">
-                            <h1 class="product-detail-filter">Filter brand</h1>
-                            <div class="product-detail-filter-checkbox-container">
-                                <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                    <input type="checkbox">
-                                    <p class="product-detail-filter-content">Apple</p>
-                                </div>
-                                <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                    <input type="checkbox">
-                                    <p class="product-detail-filter-content">G-Shock</p>
-                                </div>
-                                <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                    <input type="checkbox">
-                                    <p class="product-detail-filter-content">Casano</p>
-                                </div>
-                                <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                    <input type="checkbox">
-                                    <p class="product-detail-filter-content">Rolex</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
             <div class="col-xxl-10 col-md-8 col-sm-12">
                 <div class="row">
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
-                        <div class="product-detail-card mb-5">
-                            <div class="product-detail-card-container">
-                                <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/auguras-pipiras-O43D6CYzxqM-unsplash - Copy.jpg" alt="" class="w-100">
-                                </div>
-                                <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch 3</h3>
-                                    <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$500</p>
-                                        <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
-                                                Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text-center" *ngIf="products.length == 0">
+                        <p class="product-detail-warn m-0">No device.</p>
                     </div>
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12" *ngFor="let item of products">
                         <div class="product-detail-card mb-5">
                             <div class="product-detail-card-container">
                                 <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/daniel-korpai-hbTKIbuMmBI-unsplash.jpg" alt="" class="w-100">
+                                    <img src="{{item.img}}" alt="" class="w-100">
                                 </div>
                                 <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch Pro 2</h3>
+                                    <h3 class="product-detail-card-heading">{{item.nameProduct}}</h3>
                                     <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$200</p>
+                                        <p class="product-detail-card-price m-0">${{item.price}}</p>
                                         <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
+                                            <button class="my-btn my-btn-detail-card btn-size-sm" onclick="redirectToCart()">
                                                 <i class="fa-solid fa-cart-shopping"></i>
                                             </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
+                                            <button [routerLink]="['/shop/detail', item.nameProduct]" class="product-detail-card-button-link my-btn my-btn-detail-card btn-size-sm" (click)="insertId(item.id)">
                                                 Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
-                        <div class="product-detail-card mb-5">
-                            <div class="product-detail-card-container">
-                                <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/david-svihovec-HM-Y497t5CU-unsplash.jpg" alt="" class="w-100">
-                                </div>
-                                <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch SE 2</h3>
-                                    <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$900</p>
-                                        <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
-                                                <i class="fa-solid fa-cart-shopping"></i>
                                             </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
-                                                Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
-                        <div class="product-detail-card mb-5">
-                            <div class="product-detail-card-container">
-                                <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/auguras-pipiras-WpVToGJNH0k-unsplash.jpg" alt="" class="w-100">
-                                </div>
-                                <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch 3</h3>
-                                    <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$600</p>
-                                        <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
-                                                Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
-                        <div class="product-detail-card mb-5">
-                            <div class="product-detail-card-container">
-                                <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/david-svihovec-HM-Y497t5CU-unsplash.jpg" alt="" class="w-100">
-                                </div>
-                                <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch Pro 2</h3>
-                                    <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$1100</p>
-                                        <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
-                                                Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
-                        <div class="product-detail-card mb-5">
-                            <div class="product-detail-card-container">
-                                <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/auguras-pipiras-O43D6CYzxqM-unsplash - Copy.jpg" alt="" class="w-100">
-                                </div>
-                                <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch SE</h3>
-                                    <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$900</p>
-                                        <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
-                                                Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
-                        <div class="product-detail-card mb-5">
-                            <div class="product-detail-card-container">
-                                <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/auguras-pipiras-WpVToGJNH0k-unsplash.jpg" alt="" class="w-100">
-                                </div>
-                                <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch Pro</h3>
-                                    <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$1000</p>
-                                        <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
-                                                Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
-                        <div class="product-detail-card mb-5">
-                            <div class="product-detail-card-container">
-                                <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/daniel-korpai-hbTKIbuMmBI-unsplash.jpg" alt="" class="w-100">
-                                </div>
-                                <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch SE 3</h3>
-                                    <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$1200</p>
-                                        <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
-                                                Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-12">
-                        <div class="product-detail-card mb-5">
-                            <div class="product-detail-card-container">
-                                <div class="product-detail-card-img">
-                                    <img src="/assets/image/watch/auguras-pipiras-O43D6CYzxqM-unsplash - Copy.jpg" alt="" class="w-100">
-                                </div>
-                                <div class="product-detail-card-content">
-                                    <h3 class="product-detail-card-heading">Apple Watch Premium 3</h3>
-                                    <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
-                                        <p class="product-detail-card-price m-0">$1250</p>
-                                        <div class="product-detail-card-button">
-                                            <button class="my-btn my-third-btn btn-size-m btn-size-l" onclick="redirectToCart()">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
-                                            <a routerLink="/shop/detail" class="product-detail-card-button-link my-btn my-third-btn btn-size-m btn-size-l">
-                                                Detail
-                                            </a>
                                         </div>
                                     </div>
                                 </div>

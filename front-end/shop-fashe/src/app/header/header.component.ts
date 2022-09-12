@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthenticationService } from '../service/authentication.service';
+import { ProductService } from '../service/product-service/product.service';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,16 @@ import { AuthenticationService } from '../service/authentication.service';
 export class HeaderComponent implements OnInit {
 
   checkLogOut: boolean = false;
+  role: string;
+  categories = [];
 
-  constructor(private authentication: AuthenticationService) { }
+  constructor(private authentication: AuthenticationService,
+              private productService: ProductService) { 
+    this.getCategories();
+  }
 
   ngOnInit(): void {
+    
   }
 
   logOut(){
@@ -22,6 +29,7 @@ export class HeaderComponent implements OnInit {
 
   logIn(param){
     this.checkLogOut = param;
+    this.role = localStorage.getItem('grantList');
   }
 
   openFormLogin(){
@@ -33,4 +41,19 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  // Author: Phan Xuân Bình
+  // Date  : 08/09/2022
+  // Function: We need to extract categories for navigation, so
+  // this function below has to do get all categories in database
+  // and so them on navigation of header bar
+  getCategories(){
+    let categories = [];
+    this.productService.getAllCategories().subscribe(items => {
+      // this.categories = items;
+      categories = items;
+      categories.forEach(category => {
+        this.categories.push(category);
+      })
+    });
+  }
 }

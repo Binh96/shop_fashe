@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
   closeForm(){
     document.getElementById('login-signin').style.display = 'none';
     document.getElementById('loginForm').style.display = 'block';
+    this.formLogin.reset();
   }
 
   logIn(param){

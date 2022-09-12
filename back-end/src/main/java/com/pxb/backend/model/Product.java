@@ -45,7 +45,10 @@ public class Product {
     @Column(name = "thong_tin_ky_thuat", columnDefinition = "longtext")
     private String detail;
 
-    @Column(name ="hinh_anh")
+    @Column(name = "mo_ta", columnDefinition = "longtext")
+    private String desc;
+
+    @Column(name ="hinh_anh", columnDefinition = "longtext")
     private String img;
 
     @OneToMany(mappedBy = "product")

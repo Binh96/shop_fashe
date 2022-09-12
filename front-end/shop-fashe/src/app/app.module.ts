@@ -7,13 +7,18 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
-import {APP_BASE_HREF} from '@angular/common';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ProductComponent } from './store/product/product.component';
 import { DetailComponent } from './store/detail/detail.component';
 import { CartComponent } from './cart/cart.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InsertProductComponent } from './store/insert-product/insert-product.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import { environment } from 'src/environments/environment';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +29,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductComponent,
     DetailComponent,
     CartComponent,
-    HomepageComponent
+    HomepageComponent,
+    InsertProductComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    CKEditorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

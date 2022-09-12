@@ -1,11 +1,9 @@
 package com.pxb.backend.controller;
 
 import com.pxb.backend.model.AppUser;
-import com.pxb.backend.model.UserRole;
 import com.pxb.backend.service.IAppRoleService;
 import com.pxb.backend.service.IAppUserService;
 import com.pxb.backend.service.IUserRoleService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,10 +14,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
-import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@CrossOrigin
+@RequestMapping("/app-user")
 public class AppUserController {
     @Autowired
     private IAppUserService iAppUserService;
@@ -28,7 +26,7 @@ public class AppUserController {
     @Autowired
     private IUserRoleService iUserRoleService;
 
-    @GetMapping("")
+    @GetMapping("/get-all-app-user")
     public ResponseEntity<Page<AppUser>> getUser(@PageableDefault(value = 5)Pageable pageable){
         Page<AppUser> appUsers = iAppUserService.getAppUser(pageable);
         if(appUsers.isEmpty()){
@@ -36,16 +34,8 @@ public class AppUserController {
         }
         return new ResponseEntity<>(appUsers, HttpStatus.OK);
     }
-    @PostMapping("/login")
-    public ResponseEntity<?> checkLogin(@RequestBody AppUser appUser1){
-        AppUser appUser = iAppUserService.findByName(appUser1.getUsername());
-        if(appUser != null){
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-    }
 
-    @PostMapping(value="/save", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
+    @PostMapping(value="/save-app-user", consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE })
     public ResponseEntity<AppUser> saveUser(AppUser appUser){
         URI uri = URI.create(org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/api/save").toUriString());
