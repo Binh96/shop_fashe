@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authentication: AuthenticationService,
               private productService: ProductService) { 
     this.getCategories();
+    this.checkLogin();
   }
 
   ngOnInit(): void {
@@ -38,6 +39,15 @@ export class HeaderComponent implements OnInit {
     }
     else{
       document.getElementById('login-signin').style.display = 'block';
+    }
+  }
+
+  checkLogin(){
+    if(this.authentication.isUserLoggedIn()){
+      this.logIn(true);
+    }
+    else{
+      this.logIn(false)
     }
   }
 

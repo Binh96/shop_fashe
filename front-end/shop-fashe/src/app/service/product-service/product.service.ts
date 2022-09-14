@@ -12,7 +12,7 @@ const apiUrlProduct = 'http://localhost:8080/product';
 })
 
 export class ProductService {
-  private header = sessionStorage.getItem('token');
+  private header = localStorage.getItem('token');
 
   constructor(private http: HttpClient) { }
 
@@ -33,15 +33,15 @@ export class ProductService {
     return this.http.get<Product[]>(apiUrlProduct+'/get-product/' + name);
   }
 
-  searchProductByName(name: string, id: number): Observable<Product[]>{
-    return this.http.get<Product[]>(apiUrlProduct+'/get-product-by-name/' +name+'&'+id);
+  searchProductByName(name: string, id: number): Observable<Product>{
+    return this.http.get<Product>(apiUrlProduct+'/get-product-by-name/' +name+'&'+id);
   }
 
-  searchProductByFilterPrice(name: string, id: number, first: string, second: string): Observable<Product[]>{
-    return this.http.get<Product[]>(apiUrlProduct+'/get-product-by-filter-price/' +name+'&'+id+'&'+first+'&'+second);
+  searchProductByFilterPrice(name: string, id: number, brand: string, first: number, second: number): Observable<Product[]>{
+    return this.http.get<Product[]>(apiUrlProduct+'/get-product-by-filter-price/' +name+'&'+id+'&'+brand+'&'+first+'&'+second);
   }
 
   createProduct(product: Product): Observable<Product>{
-    return this.http.post<Product>(apiUrlProduct+"/create-product", product, {headers: new HttpHeaders({'authorization':this.header})}).pipe();
+    return this.http.post<Product>(apiUrlProduct+'/create-product', product, {headers: new HttpHeaders({'authorization':this.header})});
   }
 }

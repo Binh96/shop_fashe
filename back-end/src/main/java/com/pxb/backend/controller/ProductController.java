@@ -54,24 +54,24 @@ public class ProductController {
     }
 
     @GetMapping("/get-product-by-name/{name}&{category}")
-    public ResponseEntity<List<Product>> searchProductByName(@PathVariable String name,
+    public ResponseEntity<Product> searchProductByName(@PathVariable String name,
                                                              @PathVariable int category){
-        List<Product> products = productService.searchProductByName(name, category);
-        if (products.isEmpty()) {
-            return new ResponseEntity<>(products, HttpStatus.NO_CONTENT);
-        } else {
-            return new ResponseEntity<>(products, HttpStatus.OK);
+        Product product = productService.searchProductByName(name, category);
+        if (product != null) {
+            return new ResponseEntity<>(product, HttpStatus.OK);
         }
+        return new ResponseEntity<>(product, HttpStatus.BAD_REQUEST);
     }
 
-    @GetMapping("/get-product-by-filter-price/{name}&{category}&{first}&{second}")
+    @GetMapping("/get-product-by-filter-price/{name}&{category}&{brand}&{first}&{second}")
     public ResponseEntity<List<Product>> searchProductByFilterPrice(@PathVariable String name,
                                                              @PathVariable String first,
                                                              @PathVariable String second,
-                                                             @PathVariable int category){
-        List<Product> products = productService.searchProductByFilterPrice(first, second, name, category);
+                                                             @PathVariable int category,
+                                                             @PathVariable String brand){
+        List<Product> products = productService.searchProductByFilterPrice(first, second, name, category, brand);
         if (products.isEmpty()) {
-            return new ResponseEntity<>(products, HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(products, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(products, HttpStatus.OK);
         }

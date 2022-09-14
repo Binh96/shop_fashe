@@ -15,8 +15,10 @@ const routes: Routes =[
   {path:'shop/detail/:name', component: DetailComponent},
   {path:'shop/product', component: ProductComponent},
   {path:'shop/product/:name', component: ProductComponent},
-  {path:'cart', component: CartComponent},
-  {path:'create-product', component: InsertProductComponent},
+  {path:'cart', component: CartComponent, canActivate: [CommonguardService]},
+  {path:'create-product', component: InsertProductComponent, canActivate: [AuthGaurdService], data: {
+    role: 'ROLE_ADMIN'
+  }},
   {path:'error', component: ErrorComponent}
 ]
 

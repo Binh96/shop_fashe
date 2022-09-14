@@ -7,14 +7,12 @@ import { AuthenticationService } from './authentication.service';
 })
 export class AuthGaurdService implements CanActivate {
   role;
-  constructor(private router: Router,
-    private authService: AuthenticationService) { 
-      this.role = (sessionStorage.getItem('grantList'));
-    }
+  constructor(private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
+    this.role = (localStorage.getItem('grantList'));
     if(this.role != 'ROLE_ADMIN'){
-      // this.router.navigate(['/error']);
+      this.router.navigate(['/error']);
       return false;
     }
     return true;

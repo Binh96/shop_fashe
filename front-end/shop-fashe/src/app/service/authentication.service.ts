@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 export class User {
   constructor(public status: string) {
@@ -16,7 +17,8 @@ export class AuthenticationService {
   userLogIn: boolean;
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private router: Router
   ) {
   }
 
@@ -48,5 +50,6 @@ export class AuthenticationService {
     localStorage.removeItem('username');
     localStorage.removeItem('token');
     localStorage.removeItem('grantList');
+    this.router.navigate(['']);
   }
 }

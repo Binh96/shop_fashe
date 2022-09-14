@@ -20,6 +20,9 @@ public class Categories {
     @Column(name = "ten_danh_muc")
     private String nameCategory;
 
+    @Column(name = "hinh_anh", columnDefinition = "longtext")
+    private String img;
+
     @Column(name = "trang_thai", columnDefinition = "bit(1) default 0")
     private boolean isDeleted;
 

@@ -10,8 +10,6 @@ import java.util.List;
 
 @Repository
 public interface CategoriesRepository extends JpaRepository<Categories, Integer> {
-    @Query(value = "select ct.id, ct.ten_danh_muc as tenDanhMuc, product.hinh_anh as hinhAnh from categories ct \n" +
-            "join product on product.loai_san_pham = ct.id\n" +
-            "group by ct.id", nativeQuery = true)
+    @Query(value = "select ct.id, ct.ten_danh_muc as tenDanhMuc, ct.hinh_anh as hinhAnh from categories ct", nativeQuery = true)
     List<CategoryDto> getCategoryHasPicture();
 }

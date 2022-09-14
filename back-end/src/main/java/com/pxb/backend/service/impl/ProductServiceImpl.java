@@ -30,13 +30,13 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public List<Product> searchProductByName(String name, int category) {
+    public Product searchProductByName(String name, int category) {
         return productRepository.getProductByName('%'+name+'%', category);
     }
 
     @Override
-    public List<Product> searchProductByFilterPrice(String first, String second, String brand, int category) {
-        return productRepository.getProductByFilterPrice(first, second, '%'+brand+'%', category);
+    public List<Product> searchProductByFilterPrice(String first, String second, String name, int category, String brand) {
+        return productRepository.getProductByFilterPrice(first, second, '%'+name+'%', category, '%'+brand+'%');
     }
 
     @Override

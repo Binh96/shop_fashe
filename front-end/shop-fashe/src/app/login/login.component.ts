@@ -16,7 +16,9 @@ export class LoginComponent implements OnInit {
   @Input() checkLogOut;
 
   constructor(private router: Router,
-    private loginservice: AuthenticationService) { }
+    private loginservice: AuthenticationService) { 
+      this.loginservice.isUserLoggedIn();
+    }
 
   ngOnInit() {
     this.formLogin = new FormGroup(

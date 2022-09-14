@@ -15,15 +15,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="align-middle">
+                        <tr class="align-middle" *ngFor="let item of carts">
                             <td>
                                 <div class="cart-infor d-flex align-items-center">
                                     <div class="cart-infor-img">
-                                        <img src="/assets/image/camera/pedram-farjam-SXjTAlW1kLc-unsplash - Copy.jpg" alt="" class="w-100">
+                                        <img src="{{item.img}}" alt="" class="w-100">
                                     </div>
                                     <div class="cart-infor-content">
-                                        <h3 class="cart-infor-content-heading">XT-30</h3>
-                                        <p class="cart-infor-content-desc m-0">Silver</p>
+                                        <h3 class="cart-infor-content-heading">{{item.nameProduct}}</h3>
+                                        <p class="cart-infor-content-desc m-0">{{item.color}}</p>
                                     </div>
                                 </div>
                             </td>
@@ -32,46 +32,14 @@
                                     <button class="cart-quantity-decrement">
                                         <i class="fa-solid fa-minus"></i>
                                     </button>
-                                    <input type="text" class="cart-quantity-input text-center" value="1">
-                                    <button class="cart-quantity-increment">
+                                    <input type="text" class="cart-quantity-input text-center" value="{{item.quantity}}" [(ngModel)]="quantity" #inputQuantity>
+                                    <button class="cart-quantity-increment" (click)="incrementQuantity(item.nameProduct, item.quantity)">
                                         <i class="fa-solid fa-plus"></i>
                                     </button>
                                 </div>
                             </td>
                             <td class="text-center">
-                                <p class="cart-price m-0">$300.00</p>
-                            </td>
-                            <td>
-                                <button class="cart-delete-product">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
-                            <td>
-                                <div class="cart-infor d-flex align-items-center">
-                                    <div class="cart-infor-img">
-                                        <img src="/assets/image/watch/auguras-pipiras-O43D6CYzxqM-unsplash - Copy.jpg" alt="" class="w-100">
-                                    </div>
-                                    <div class="cart-infor-content">
-                                        <h3 class="cart-infor-content-heading">Apple watch</h3>
-                                        <p class="cart-infor-content-desc m-0">Black</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <div class="cart-quantity d-flex align-items-center justify-content-center">
-                                    <button class="cart-quantity-decrement">
-                                        <i class="fa-solid fa-minus"></i>
-                                    </button>
-                                    <input type="text" class="cart-quantity-input text-center" value="1">
-                                    <button class="cart-quantity-increment">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <p class="cart-price m-0">$150.00</p>
+                                <p class="cart-price m-0">${{item.price}}</p>
                             </td>
                             <td>
                                 <button class="cart-delete-product">

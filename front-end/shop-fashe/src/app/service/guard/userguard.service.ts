@@ -12,12 +12,12 @@ export class UserguardService implements CanActivate{
   constructor(private router: Router,
     private authService: AuthenticationService,
     private authGuard: AuthGaurdService) { 
-    this.role = (sessionStorage.getItem('grantList'));
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
+    this.role = (localStorage.getItem('grantList'));
     if(this.role != 'ROLE_USER'){
-      // this.router.navigateByUrl('/error');
+      this.router.navigateByUrl('/error');
       return false;
     }
     return true;

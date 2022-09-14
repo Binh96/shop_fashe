@@ -10,23 +10,20 @@
     </div>
     <div class="product-detail-container container-fluid">
         <div class="row">
-            <div class="col-xxl-2 col-md-4 hide-produce-sidebar">
-                <form action="">
+            <div class="col-xxl-2 col-md-3 hide-produce-sidebar">
+                <form action="" [formGroup]="formSearch" (change)="ngOnChanges($event)">
                     <div class="product-detail-sidebar">
                         <div class="product-detaile-search d-flex align-items-center justify-content-end mb-3">
-                            <input type="text" [(ngModel)]="searchText" class="product-detail-search-input w-100" id="inputSearch" placeholder="Name device" (ngModelChange)="searchProduct()">
-                            <button class="my-btn my-third-btn btn-size-m ms-3 btn-size-sm my-btn-bg-black">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
+                            <input type="text" formControlName="searchText" class="product-detail-search-input w-100" id="inputSearch" placeholder="Name device">
                         </div>
                         <div class="product-detail-filter mb-3">
                             <div class="product-detail-filter-price">
                                 <h1 class="product-detail-filter">Filter price</h1>
-                                <div class="product-detail-filter-checkbox-container">
+                                <div class="product-detail-filter-checkbox-container" formArrayName="boxes">
                                     <div class="product-detail-filter-checkbox d-flex align-items-center mb-3"
-                                    *ngFor="let box of priceFillter">
-                                        <input name="checked" type="checkbox" [value]="box.price" [(ngModel)]="box.checked" (change)="ngOnChanges($event)">
-                                        <p class="product-detail-filter-content">{{box.price}}</p>
+                                    *ngFor="let box of boxes.controls, index as i" [formGroupName]="i">
+                                        <input type="checkbox" formControlName="checked">
+                                        <p class="product-detail-filter-content">{{priceFillter[i].price}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -34,22 +31,10 @@
                         <div class="product-detail-filter mb-3">
                             <div class="product-detail-filter-price">
                                 <h1 class="product-detail-filter">Filter brand</h1>
-                                <div class="product-detail-filter-checkbox-container">
-                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                        <input type="checkbox">
-                                        <p class="product-detail-filter-content">Apple</p>
-                                    </div>
-                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                        <input type="checkbox">
-                                        <p class="product-detail-filter-content">G-Shock</p>
-                                    </div>
-                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                        <input type="checkbox">
-                                        <p class="product-detail-filter-content">Casano</p>
-                                    </div>
-                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3">
-                                        <input type="checkbox">
-                                        <p class="product-detail-filter-content">Rolex</p>
+                                <div class="product-detail-filter-checkbox-container" formArrayName="brand">
+                                    <div class="product-detail-filter-checkbox d-flex align-items-center mb-3" *ngFor="let item of brand.controls, index as i" [formGroupName]="i">
+                                        <input type="checkbox" formControlName="checked">
+                                        <p class="product-detail-filter-content">{{brandFilter[i].brand}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +58,7 @@
                                     <div class="product-detail-card-footer d-flex justify-content-between align-items-center">
                                         <p class="product-detail-card-price m-0">${{item.price}}</p>
                                         <div class="product-detail-card-button">
-                                            <button class="my-btn my-btn-detail-card btn-size-sm" onclick="redirectToCart()">
+                                            <button class="my-btn my-btn-detail-card btn-size-sm" (click)="insertToCart(item.nameProduct, item.categories.id)">
                                                 <i class="fa-solid fa-cart-shopping"></i>
                                             </button>
                                             <button [routerLink]="['/shop/detail', item.nameProduct]" class="product-detail-card-button-link my-btn my-btn-detail-card btn-size-sm" (click)="insertId(item.id)">
@@ -166,19 +151,19 @@
 <section class="service">
     <div class="service-container container-fluid">
         <div class="row service-container-row">
-            <div class="col-xl-4 col-sm-12 service-container-col">
+            <div class="col-xl-4 col-sm-12 service-container-col mb-sm-3">
                 <div class="service-content">
                     <h1 class="service-content-heading">Free Delivery Worldwide</h1>
                     <a href="" class="service-content-link">Click here for more info</a>
                 </div>
             </div>
-            <div class="col-xl-4 col-sm-12 service-container-col">
+            <div class="col-xl-4 col-sm-12 service-container-col mb-sm-3">
                 <div class="service-content">
                     <h1 class="service-content-heading">30 Days Return</h1>
                     <p href="" class="service-content-link">Simply return it within 30 days for an exchange.</p>
                 </div>
             </div>
-            <div class="col-xl-4 col-sm-12 service-container-col">
+            <div class="col-xl-4 col-sm-12 service-container-col mb-sm-3">
                 <div class="service-content">
                     <h1 class="service-content-heading">Store Opening</h1>
                     <p href="" class="service-content-link">Shop open from Monday to Sunday</p>

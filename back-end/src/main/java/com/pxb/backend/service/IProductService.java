@@ -13,9 +13,9 @@ public interface IProductService {
 
     Page<Product> getAllProductByCategory(String id, Pageable pageable);
 
-    List<Product> searchProductByName(String name, int category);
+    Product searchProductByName(String name, int category);
 
-    List<Product> searchProductByFilterPrice(String first, String second, String brand, int category);
+    List<Product> searchProductByFilterPrice(String first, String second, String name, int category, String brand);
 
     Product getProductById(int id);
 }

@@ -31,14 +31,15 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     Product getProductById(@Param("id") int id);
 
     @Query(value ="select * from Product where xoa = 0 and ten_san_pham like :name and loai_san_pham = :id", nativeQuery = true)
-    List<Product> getProductByName(@Param("name") String name, @Param("id") int id);
+    Product getProductByName(@Param("name") String name, @Param("id") int id);
 
     @Query(value ="select p.id, p.hang, p.mau_sac, p.mo_ta,p.thong_tin_ky_thuat, p.hinh_anh, p.xoa, p.xuat_xu, " +
             "p.ten_san_pham, p.gia, p.so_luong, p.trang_thai, p.loai_san_pham from product p " +
             "join categories on p.loai_san_pham = categories.id " +
-            "where gia between :first and :second and hang like :brand and p.loai_san_pham = :id", nativeQuery = true)
+            "where gia between :first and :second and hang like :brand and p.ten_san_pham like :name and p.loai_san_pham = :id", nativeQuery = true)
     List<Product> getProductByFilterPrice(@Param("first") String first,
                                    @Param("second") String second,
-                                   @Param("brand") String brand,
-                                   @Param("id") int id);
+                                   @Param("name") String name,
+                                   @Param("id") int id,
+                                   @Param("brand") String brand);
 }

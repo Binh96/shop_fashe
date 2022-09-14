@@ -11,10 +11,10 @@ export class CommonguardService implements CanActivate{
 
   constructor(private router: Router,
     private authService: AuthenticationService,) { 
-    this.role = (sessionStorage.getItem('grantList'));
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    if(this.role != 'ROLE_USER' || this.role !='ROLE_ADMIN'){
+    this.role = (localStorage.getItem('grantList'));
+    if(this.role == null){
       this.router.navigate(['/error']);
       return false;
     }

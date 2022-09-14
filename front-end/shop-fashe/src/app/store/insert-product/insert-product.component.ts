@@ -82,8 +82,6 @@ export class InsertProductComponent implements OnInit {
     const product = this.product.value;
     this.product.value.img = this.srcImage;
     if(this.product.valid){
-      console.log(product);
-      
       this.productService.createProduct(product).subscribe();
     }
   }
