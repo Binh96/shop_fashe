@@ -27,6 +27,18 @@ html{
     border: 1px solid var(--fourth-color-text) !important;
 }
 
+.circle-without-border{
+    border-radius: 50%;
+    padding: 2px;
+    background-color: var(--second-color-bg);
+    opacity: 0.8;
+}
+
+.circle-without-border.circle-size-m{
+    width: 32px;
+    height: 32px;
+}
+
 .circle.circle-size-m{
     width: 32px;
     height: 32px;

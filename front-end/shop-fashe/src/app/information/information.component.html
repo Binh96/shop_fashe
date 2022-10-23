@@ -1,0 +1,219 @@
+<section class="container infor">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 col-sm-9">
+            <div class="infor-container" *ngIf="inforUser">
+                <form action="" [formGroup]="formInforUser">
+                    <div class="row">
+                        <div class="infor-img col-sm-4 col-lg-4">
+                            <div class="img-triangle"></div>
+                            <div class="img-container">
+                                <div class="img-inner-container">
+                                    <img [src]="srcImage" alt="" style="width: 100%; height: 100%" class="w-100 img-user">
+                                </div>
+                                <div class="infor-upload-img">
+                                    <div class="col-lg-8 col-sm-8 infor-upload-container">
+                                        <div (click)="picture.click()" class="circle-without-border circle-size-m upload-icon-container d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-camera-retro upload-icon"></i>
+                                        </div>
+                                        <input type="file" class="create-product-input-file-img" formControlName="image" 
+                                        accept=".jpg, .png, .jpeg" (change)="choosePicture($event)" style="display: none;" #picture>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infor-content col-sm-8 col-lg-8">
+                            <div class="container-fluid ps-0">
+                                <div class="row">
+                                    <div class="infor-content-header">
+                                        <h1 class="mb-4 text-center infor-content-heading ">Information</h1>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-6">
+                                        <div class="lable-input-container d-flex align-items-center">
+                                            <label for="" class="label-infor">Name account:</label>
+                                            <button class="lable-input-btn-fix" (click)="name.focus()" (click)="focusToInput()">
+                                                <i class="fa-solid fa-pen ms-2"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" #name id="name" formControlName="name" class="infor-form mb-2 inputForm" [readonly]="readonly" (focusout)="outFocus()">
+                                        <div class="lable-input-container d-flex align-items-center">
+                                            <label for="" class="label-infor">Address:</label>
+                                            <button class="lable-input-btn-fix" (click)="address.focus()" (click)="focusToInput()">
+                                                <i class="fa-solid fa-pen ms-2"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" #address formControlName="address" class="infor-form mb-2 inputForm" [readonly]="readonly" (focusout)="outFocus()">
+                                        <div class="lable-input-container d-flex align-items-center">
+                                            <label for="" class="label-infor">Phone number:</label>
+                                            <button class="lable-input-btn-fix" (click)="phone.focus()" (click)="focusToInput()">
+                                                <i class="fa-solid fa-pen ms-2"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" #phone formControlName="phone" class="infor-form mb-2 inputForm" [readonly]="readonly" (focusout)="outFocus()">
+                                    </div>
+                                    <div class="col-sm-6 col-lg-6">
+                                        <div class="lable-input-container d-flex align-items-center">
+                                            <label for="" class="label-infor">Birthday:</label>
+                                            <button class="lable-input-btn-fix" (click)="birthday.focus()" (click)="focusToInput()">
+                                                <i class="fa-solid fa-pen ms-2"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" #birthday formControlName="birthday" class="infor-form mb-2 inputForm" [readonly]="readonly" (focusout)="outFocus()">
+                                        <div class="lable-input-container d-flex align-items-center">
+                                            <label for="" class="label-infor">Email:</label>
+                                            <button class="lable-input-btn-fix" (click)="email.focus()" (click)="focusToInput()">
+                                            <i class="fa-solid fa-pen ms-2"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" #email formControlName="email" class="infor-form w-100 mb-2 inputForm" [readonly]="readonly" (focusout)="outFocus()">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="our-blog">
+    <div class="our-blog-header text-center">
+        <h1 class="heading">OUR BLOG</h1>
+    </div>
+    <div class="our-blog-container container">
+        <div class="row pt-3">
+            <div class="col-lg-4 col-sm-12">
+                <div class="our-blog-card">
+                    <div class="our-blog-card-img">
+                        <img src="/assets/image/camera/lilly-rum-snmtni2z6Qw-unsplash.jpg" alt="" class="w-100">
+                    </div>
+                    <div class="our-blog-content">
+                        <a href="" class="our-blog-content-heading">Black Friday Guide: Best Sales & Discount Codes</a>
+                        <p class="our-blog-content-author">By Nancy Ward on August 22, 2022</p>
+                        <p class="our-blog-content-desc">Duis ut velit gravida nibh bibendum commodo. 
+                            Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="our-blog-card-img">
+                    <img src="/assets/image/laptop/james-mckinven-tpuAo8gVs58-unsplash.jpg" alt="" class="w-100">
+                </div>
+                <div class="our-blog-content">
+                    <a href="" class="our-blog-content-heading">The Macbook Nearly Every people Own</a>
+                    <p class="our-blog-content-author">By Nancy Ward on August 23, 2022</p>
+                    <p class="our-blog-content-desc">Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, 
+                        eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="our-blog-card-img">
+                    <img src="/assets/image/watch/john-torcasio-TJrkkhdB39E-unsplash.jpg" alt="" class="w-100">
+                </div>
+                <div class="our-blog-content">
+                    <a href="" class="our-blog-content-heading">New York SS 2022 Watch: Omega</a>
+                    <p class="our-blog-content-author">By Nancy Ward on August 10, 2022</p>
+                    <p class="our-blog-content-desc">Duis ut velit gravida nibh bibendum commodo. 
+                        Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="follow">
+    <div class="follow-header text-center">
+        <h1 class="heading">@ FOLLOW US ON INSTAGRAM</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row pt-4">
+            <div class="col-lg-3 col-sm-6 p-0">
+                <div class="follow-card">
+                    <div class="follow-card-img">
+                        <img src="/assets/image/laptop/paige-cody-ITTqjS3UpoY-unsplash.jpg" alt="" class="w-100">
+                        <div class="follow-card-wrap">
+                            <div class="follow-card-heart text-end p-2">
+                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                            </div>
+                            <div class="follow-card-btn text-center">
+                                <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 p-0">
+                <div class="follow-card">
+                    <div class="follow-card-img">
+                        <img src="/assets/image/laptop/brooke-cagle-ICTKcvnXx_8-unsplash.jpg" alt="" class="w-100">
+                        <div class="follow-card-wrap">
+                            <div class="follow-card-heart text-end p-2">
+                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                            </div>
+                            <div class="follow-card-btn text-center">
+                                <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 p-0">
+                <div class="follow-card">
+                    <div class="follow-card-img">
+                        <img src="/assets/image/watch/hunters-race--SDgOlirIaY-unsplash.jpg" alt="" class="w-100">
+                        <div class="follow-card-wrap">
+                            <div class="follow-card-heart text-end p-2">
+                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                            </div>
+                            <div class="follow-card-btn text-center">
+                                <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 p-0">
+                <div class="follow-card">
+                    <div class="follow-card-img">
+                        <img src="/assets/image/camera/jamie-street-5eW9XUDwdW0-unsplash.jpg" alt="" class="w-100">
+                        <div class="follow-card-wrap">
+                            <div class="follow-card-heart text-end p-2">
+                                <i class="fa-regular fa-heart icon-heart-empty iconEmptyHeart"></i>
+                            </div>
+                            <div class="follow-card-btn text-center">
+                                <p class="follow-card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Consectetur dicta molestias qui fuga ducimus omnis, hic laborum animi quibusdam soluta!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="service">
+    <div class="service-container container-fluid">
+        <div class="row service-container-row">
+            <div class="col-xl-4 col-sm-12 service-container-col">
+                <div class="service-content">
+                    <h1 class="service-content-heading">Free Delivery Worldwide</h1>
+                    <a href="" class="service-content-link">Click here for more info</a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-sm-12 service-container-col">
+                <div class="service-content">
+                    <h1 class="service-content-heading">30 Days Return</h1>
+                    <p href="" class="service-content-link">Simply return it within 30 days for an exchange.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-sm-12 service-container-col">
+                <div class="service-content">
+                    <h1 class="service-content-heading">Store Opening</h1>
+                    <p href="" class="service-content-link">Shop open from Monday to Sunday</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

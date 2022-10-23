@@ -1,7 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { sign } from 'crypto';
+import { AppUser } from '../model/app-user';
+import { SignUp } from '../model/sign-up';
+import { User } from '../model/user';
 import { AuthenticationService } from '../service/authentication.service';
+import { InformationService } from './service/information.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +15,21 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
+  user: User;
+  username: string;
   formLogin: FormGroup;
+  fomrSignUp: FormGroup;
+  accountSignUp: SignUp;
+  confirmPassword: string;
+  checkConfirmPassword = false;
+  password: string;
   invalidLogin = false;
   @Output() checkLogIn = new EventEmitter<string>();
   @Input() checkLogOut;
 
   constructor(private router: Router,
-    private loginservice: AuthenticationService) { 
+              private loginservice: AuthenticationService,
+              private informationService: InformationService) { 
       this.loginservice.isUserLoggedIn();
     }
 
@@ -27,13 +40,20 @@ export class LoginComponent implements OnInit {
         password: new FormControl('')
       }
     );
+    this.fomrSignUp = new FormGroup(
+      {
+        name: new FormControl(''),
+        email: new FormControl(''),
+        address: new FormControl(''),
+        birthday: new FormControl('')
+      }
+    );
   }
 
   checkLogin() {
-    (this.loginservice.authenticate(this.formLogin.value.username, 
+    this.loginservice.authenticate(this.formLogin.value.username, 
       this.formLogin.value.password).subscribe(
       data => {
-        console.log(data);
         this.router.navigate([''])
         this.invalidLogin = false;
         this.closeForm();
@@ -43,7 +63,6 @@ export class LoginComponent implements OnInit {
       error => {
         this.invalidLogin = true
       }
-    )
     );
   }
 
@@ -55,6 +74,34 @@ export class LoginComponent implements OnInit {
 
   logIn(param){
     this.checkLogIn.emit(param);
+  }
+
+
+  signUp(){
+    this.accountSignUp = this.fomrSignUp.value;
+    this.accountSignUp.password = this.password;
+    if(this.checkConfirmPassword){
+      if(this.fomrSignUp.valid){
+        this.informationService.signUp(this.accountSignUp).subscribe(() => {}, () =>{},
+        () => {
+          this.closeForm();
+        });
+      }
+    }
+    else{
+      console.log("Something goes wrong");
+    }
+  }
+
+  checkSignUpPassword(event){
+    if(this.confirmPassword != this.password){
+      this.checkConfirmPassword = false;
+      document.getElementById('errorConfirmPassword').innerHTML = 'Password not match.';
+    }
+    else{
+      this.checkConfirmPassword = true;
+      document.getElementById('errorConfirmPassword').innerHTML = '';
+    }
   }
 
 }

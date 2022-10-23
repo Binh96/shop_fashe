@@ -22,7 +22,9 @@
     "@angular/router": "~9.0.7",
     "@ckeditor/ckeditor5-angular": "^4.0.0",
     "@ckeditor/ckeditor5-build-classic": "^35.1.0",
+    "creditcardpayments": "^1.0.3",
     "firebase": "^8.10.1",
+    "ngx-paypal": "^4.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

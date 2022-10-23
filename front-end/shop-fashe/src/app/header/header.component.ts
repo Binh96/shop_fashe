@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { InformationService } from '../login/service/information.service';
+import { User } from '../model/user';
 import { AuthenticationService } from '../service/authentication.service';
 import { ProductService } from '../service/product-service/product.service';
 
@@ -10,11 +12,15 @@ import { ProductService } from '../service/product-service/product.service';
 export class HeaderComponent implements OnInit {
 
   checkLogOut: boolean = false;
+  checkLoginCart: boolean = false;
+  user: User;
+  username: string;
   role: string;
   categories = [];
 
   constructor(private authentication: AuthenticationService,
-              private productService: ProductService) { 
+              private productService: ProductService,
+              private informationService: InformationService) { 
     this.getCategories();
     this.checkLogin();
   }
@@ -26,11 +32,15 @@ export class HeaderComponent implements OnInit {
   logOut(){
     this.authentication.logOut();
     this.checkLogOut = false;
+    this.checkLoginCart = false;
+    this.username = localStorage.getItem('username');
   }
 
   logIn(param){
     this.checkLogOut = param;
+    this.checkLoginCart= true;
     this.role = localStorage.getItem('grantList');
+    this.username = localStorage.getItem('username');
   }
 
   openFormLogin(){
@@ -45,9 +55,17 @@ export class HeaderComponent implements OnInit {
   checkLogin(){
     if(this.authentication.isUserLoggedIn()){
       this.logIn(true);
+      this.checkLoginCart = true;
+      this.username = localStorage.getItem('username');
+      if(this.username){
+        this.informationService.getInformation(this.username).subscribe(items =>{
+          this.user = items;
+        });
+      }
     }
     else{
-      this.logIn(false)
+      this.logIn(false);
+      this.checkLoginCart = false;
     }
   }
 

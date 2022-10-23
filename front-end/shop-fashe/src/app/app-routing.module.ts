@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { ErrorComponent } from './error/error.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { InformationComponent } from './information/information.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
 import { CommonguardService } from './service/guard/commonguard.service';
 import { UserguardService } from './service/guard/userguard.service';
@@ -19,6 +20,7 @@ const routes: Routes =[
   {path:'create-product', component: InsertProductComponent, canActivate: [AuthGaurdService], data: {
     role: 'ROLE_ADMIN'
   }},
+  {path:':name', component: InformationComponent, canActivate: [CommonguardService]},
   {path:'error', component: ErrorComponent}
 ]
 

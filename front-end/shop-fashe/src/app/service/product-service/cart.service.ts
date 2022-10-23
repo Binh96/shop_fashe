@@ -10,13 +10,16 @@ export class CartService {
   constructor(private productService: ProductService) {
    }
 
-  insertToCart(name: string, id: number){
+  insertToCart(name: string, id: number, quantity){
+    let quantityTemp = quantity;
     this.productService.searchProductByName(name, id).subscribe(items => {
       const product = items;
       const setProductToCart = {
+        idProduct: product.id,
         name: product.nameProduct,
-        quantity: 1,
+        quantity: quantity,
         idCategory: product.categories.id,
+        originPrice: product.price
       }
       this.carts = setProductToCart;
       this.setToLocalStorage(this.carts);
@@ -28,7 +31,7 @@ export class CartService {
     let checkCart = false;
     if(cartStorage.length != 0){
       for(let i=0; i< cartStorage.length; i++){
-        if(cartStorage[i].name == cart.name){
+        if(cartStorage[i].idProduct == cart.idProduct){
           ++cartStorage[i].quantity;
           checkCart = true;
           break;
@@ -55,6 +58,13 @@ export class CartService {
       return cartStorage;
     }
     return [];
+  }
+
+  checkCartLocalStorage(cart: Cart[]): boolean{
+    if(cart.length > 0){
+      return true;
+    }
+    return false;
   }
 
 }

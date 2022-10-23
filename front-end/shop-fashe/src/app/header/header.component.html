@@ -68,14 +68,15 @@
             </ul>
         </div>
         <div class="nav-information col-sm-2 d-flex justify-content-end">
-            <div class="btn-form-login-out">
+            <div class="btn-form-login-out d-flex align-items-center">
+                <p class="ps-2 user-text" *ngIf="username">{{username}}</p>
                 <button class="circle circle-size-m my-btn mx-1" id="login" (click)="openFormLogin()">
                     <i class="fa-solid fa-user icon-user"></i>
                 </button>
                 <div class="form-infor-login" *ngIf="checkLogOut">
-                    <ul class="form-infor-list m-0">
+                    <ul class="form-infor-list m-0 p-0">
                         <li class="form-infor-item">
-                            <a routerLink="/personal" class="m-0 form-infor-item-text">Personal information</a>
+                            <a [routerLink]="['', username]" class="m-0 form-infor-item-text">Personal information</a>
                         </li>
                         <li class="form-infor-item" *ngIf="role == 'ROLE_ADMIN'">
                             <a routerLink="/create-product" class="m-0 form-infor-item-text">Create Product</a>
@@ -93,7 +94,10 @@
                 <button class="circle circle-size-m my-btn mx-1" routerLink="/cart">
                     <i class="fa-solid fa-bag-shopping icon-bag"></i>
                 </button>
-                <div class="header__cart-list">
+                <div class="header__cart-notification-cart align-items-center justify-content-center" *ngIf="checkLoginCart == false">
+                    <p class="notification-cart-login-text m-0 p-0 text-center">Please login to watch cart.</p>
+                </div>
+                <div class="header__cart-list" *ngIf="checkLoginCart">
                     <span class="header__cart-list--no-cart-msg">No product</span>
                     <h4 class="header__cart-heading">Product</h4>
                     <ul class="header__cart-list-item">

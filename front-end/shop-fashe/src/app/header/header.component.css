@@ -1,0 +1,18 @@
+.form-infor-item-text{
+    display: block;
+}
+
+.form-infor-login{
+    background-color: var(--fourth-color-bg);
+}
+
+.form-infor-item{
+    cursor: pointer;
+}
+
+.user-text{
+    color: var(--third-color-text);
+    font-weight: 600;
+    margin-right: 3px;
+    margin-bottom: 0;
+}

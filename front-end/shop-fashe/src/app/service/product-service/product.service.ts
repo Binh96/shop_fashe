@@ -42,6 +42,6 @@ export class ProductService {
   }
 
   createProduct(product: Product): Observable<Product>{
-    return this.http.post<Product>(apiUrlProduct+'/create-product', product, {headers: new HttpHeaders({'authorization':this.header})});
+    return this.http.post<Product>(apiUrlProduct+'/create-product', product, {headers: new HttpHeaders({'authorization':this.header})}).pipe();
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { finalize } from 'rxjs/operators';
 import { ProductService } from 'src/app/service/product-service/product.service';
@@ -18,7 +19,9 @@ export class InsertProductComponent implements OnInit {
   selectedImage: any = null;
   product: FormGroup;
 
-  constructor(private productService: ProductService, private storage: AngularFireStorage) {
+  constructor(private productService: ProductService,
+              private storage: AngularFireStorage,
+              private router: Router) {
     this.getCategories();
   }
 
@@ -82,7 +85,9 @@ export class InsertProductComponent implements OnInit {
     const product = this.product.value;
     this.product.value.img = this.srcImage;
     if(this.product.valid){
-      this.productService.createProduct(product).subscribe();
+      this.productService.createProduct(product).subscribe(() => {}, () => {}, () => {
+        this.router.navigate['/shop/product/Camera'];
+      });
     }
   }
 

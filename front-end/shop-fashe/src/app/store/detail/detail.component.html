@@ -17,26 +17,28 @@
                         </p>
                         <div class="detail-product-content-footer">
                             <div class="detail-product-content-quantity mb-4">
-                                <button class="cart-quantity-decrement">
+                                <button class="cart-quantity-decrement" (click)="decrementQuantity()">
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
-                                <input type="text" class="detail-quantity-input text-center" value="1">
-                                <button class="cart-quantity-increment">
+                                <input type="text" class="detail-quantity-input text-center" value="{{quantity}}">
+                                <button class="cart-quantity-increment" (click)="incrementQuantity()">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
-                            <button class="ms-3 my-btn my-second-btn my-btn-bg-black btn-size-l" onclick="toCart()">Add To Cart</button>
+                            <button class="ms-3 my-btn my-second-btn my-btn-bg-black btn-size-l" (click)="insertToCart(product.nameProduct, product.categories.id)">Add To Cart</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row pt-3">
-            <div class="col-lg-12 col-sm-12" *ngIf="product">
-                <h3 class="detail-product-heading">
-                    Product details
-                </h3>
-                <div class="detail-product-content-infor" [innerHTML]="product.detail"></div>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-lg-12 col-sm-12" *ngIf="product">
+                    <h3 class="detail-product-heading">
+                        Product details
+                    </h3>
+                    <div class="detail-product-content-infor" [innerHTML]="product.detail"></div>
+                </div>
             </div>
         </div>
     </div>

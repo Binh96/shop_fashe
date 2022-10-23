@@ -43,26 +43,31 @@
                 <h1 class="login-heading">Sign Up</h1>
             </div>
             <div class="login-form">
-                <form action="">
-                    <label for="">First name: </label>
+                <form action="" [formGroup]="fomrSignUp" (ngSubmit)="signUp()">
+                    <label for="">Name account: </label>
                     <br>
-                    <input type="text" placeholder="First name" class="form-control mt-2" required>
-                    <br>
-                    <label for="">Last name: </label>
-                    <br>
-                    <input type="text" placeholder="Last name" class="form-control mt-2" required>
+                    <input type="text" placeholder="Name account" formControlName="name" class="form-control mt-2" required>
                     <br>
                     <label for="">Email: </label>
                     <br>
-                    <input type="email" placeholder="Your email" class="form-control mt-2" required>
+                    <input type="email" placeholder="Your email" formControlName="email" class="form-control mt-2" required>
+                    <br>
+                    <label for="">Address: </label>
+                    <br>
+                    <input type="text" placeholder="Your address" formControlName="address" class="form-control mt-2" required>
+                    <br>
+                    <label for="">Date of birth: </label>
+                    <br>
+                    <input type="text" placeholder="yyyy-mm-dd" formControlName="birthday" class="form-control mt-2" required>
                     <br>
                     <label for="">Password: </label>
                     <br>
-                    <input type="password" placeholder="Your password" class="form-control mt-2" required>
+                    <input type="password" placeholder="Your password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control mt-2" required>
                     <br>
                     <label for="">Confirm password: </label>
                     <br>
-                    <input type="password" placeholder="Confirm password" class="form-control mt-2" required>
+                    <input type="password" placeholder="Confirm password" [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}" class="form-control mt-2" required (ngModelChange)="checkSignUpPassword($event)">
+                    <p id="errorConfirmPassword" class="m-0 text-danger"></p>
                     <br>
                     <br>
                     <button class="my-btn my-third-btn btn-size-l bg-primary-color w-100 btn-form-login">Create account</button>

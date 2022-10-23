@@ -299,7 +299,7 @@ export class ProductComponent implements OnInit, OnChanges {
   
   // Add product to cart
   insertToCart(name: string, id: number){
-    this.cartService.insertToCart(name, id);
+    this.cartService.insertToCart(name, id, 1);
   }
 
 }

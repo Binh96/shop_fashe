@@ -19,6 +19,9 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { ErrorComponent } from './error/error.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { InformationComponent } from './information/information.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { ErrorComponent } from './error/error.component';
     CartComponent,
     HomepageComponent,
     InsertProductComponent,
-    ErrorComponent
+    ErrorComponent,
+    InformationComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ import { ErrorComponent } from './error/error.component';
     HttpClientModule,
     CKEditorModule,
     FormsModule,
+    NgxPayPalModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule
